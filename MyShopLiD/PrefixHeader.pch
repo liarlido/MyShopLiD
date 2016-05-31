@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  MyShopLiD
+//
+//  Created by LiaRLido on 16/5/31.
+//  Copyright © 2016年 LiaRLido. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <CDRTranslucentSideBar.h>
+
+
+
+#endif /* PrefixHeader_pch */

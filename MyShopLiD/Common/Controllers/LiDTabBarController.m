@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.tabBar setTintColor:[UIColor whiteColor]];
     [self setUpChildVc:[[LiDExploreViewController alloc]init] title:@"搜索" image:[UIImage imageNamed:@"TabBar_1"] selectedImage:[UIImage imageNamed:@"TabBar_1_1"]];
     [self setUpChildVc:[[LiDNewsViewController alloc]init] title:@"新品" image:[UIImage imageNamed:@"TabBar_3"] selectedImage:[UIImage imageNamed:@"TabBar_1_3"]];
     

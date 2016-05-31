@@ -15,7 +15,14 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CDRTranslucentSideBar (1.0.3)
+  - HMSegmentedControl (1.5.2)
   - LLSlideMenu (1.0.4)
+  - MXPagerView (0.1.2)
+  - MXParallaxHeader (0.4.3)
+  - MXSegmentedPager (3.0.4):
+    - HMSegmentedControl (~> 1.5.2)
+    - MXPagerView (~> 0.1.2)
+    - MXParallaxHeader (~> 0.4.3)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
@@ -24,14 +31,19 @@ DEPENDENCIES:
   - AFNetworking
   - CDRTranslucentSideBar
   - LLSlideMenu
+  - MXSegmentedPager
   - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CDRTranslucentSideBar: b13a1792a8c495ea8f2356846a95bf7119cec7b0
+  HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   LLSlideMenu: e98f45dc04cdbbf19b4e6922b9078dc519292920
+  MXPagerView: b0cc1695ff8470a1bb1628e25e8878eb94606a60
+  MXParallaxHeader: 96d9e7c392a26b29b97ddc34bff904a9c0baef27
+  MXSegmentedPager: 48a6129c823a3a5c6f5809c43463dbdf8351f528
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
-PODFILE CHECKSUM: 2b74b46341bf7f90b2a8e64c1475e3486e351226
+PODFILE CHECKSUM: 3af7007b34c4790e6f68bd49188b0abc615356fe
 
 COCOAPODS: 1.0.0

@@ -7,6 +7,7 @@
 //
 
 #import "LiDExploreViewController.h"
+#import "LiDMenuTableViewController.h"
 
 
 @interface LiDExploreViewController ()<CDRTranslucentSideBarDelegate,UITableViewDelegate,UITableViewDataSource>
@@ -39,11 +40,13 @@
     [self.slideMenu setDelegate:self];
     [self.slideMenu setSideBarWidth:200];
     
-    UITableView *tableView=[[UITableView alloc]initWithFrame:self.slideMenu.view.frame style:UITableViewStylePlain];
-    [tableView setDelegate:self];
-    [tableView setDataSource:self];
+    UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITableViewController *menuTableView=[sb instantiateViewControllerWithIdentifier:NSStringFromClass([LiDMenuTableViewController class])];
     
-    [self.slideMenu setContentViewInSideBar:tableView];
+    [self addChildViewController:menuTableView];
+    
+    
+    [self.slideMenu setContentViewInSideBar:menuTableView.view];
     
     
 }

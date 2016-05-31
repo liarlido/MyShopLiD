@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "straighten-grid~iphone.png",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
+      "filename" : "straighten-grid~iphone.png",
       "scale" : "2x"
     },
     {

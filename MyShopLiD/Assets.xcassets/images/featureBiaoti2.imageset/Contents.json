@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "featureBiaoti2~iphone.png",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
+      "filename" : "featureBiaoti2~iphone.png",
       "scale" : "2x"
     },
     {

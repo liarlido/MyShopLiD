@@ -35,9 +35,9 @@
             
            [imageView setTransform:CGAffineTransformMakeScale(0.2, 0.2)];
         } completion:^(BOOL finished) {
-            [self presentViewController:_tabBar animated:YES completion:nil];
-            [imageView setTransform:CGAffineTransformMakeScale(2.0, 2.0)];
             
+            [imageView setTransform:CGAffineTransformMakeScale(2.0, 2.0)];
+            [self presentViewController:_tabBar animated:YES completion:nil];
         }];
 }
 

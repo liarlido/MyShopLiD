@@ -17,9 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITableViewController *tableViewController=[sb instantiateViewControllerWithIdentifier:@"LiDMenuTableViewController"];
-    self.view=tableViewController.view;
 }
 
 - (void)didReceiveMemoryWarning {

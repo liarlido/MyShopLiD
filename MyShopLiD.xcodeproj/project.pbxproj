@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01A2AB1F1CFD1E0B007B48DB /* LiDMenuTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A2AB1E1CFD1E0B007B48DB /* LiDMenuTableView.m */; };
 		01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */; };
 		01DED1031CFBE77600CF60C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DED1021CFBE77600CF60C0 /* main.m */; };
 		01DED1061CFBE77600CF60C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DED1051CFBE77600CF60C0 /* AppDelegate.m */; };
@@ -47,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01A2AB1C1CFD1888007B48DB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		01A2AB1D1CFD1E0B007B48DB /* LiDMenuTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDMenuTableView.h; sourceTree = "<group>"; };
+		01A2AB1E1CFD1E0B007B48DB /* LiDMenuTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMenuTableView.m; sourceTree = "<group>"; };
 		01BCD9141CFC45C400383A16 /* LiDMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDMenuTableViewController.h; sourceTree = "<group>"; };
 		01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMenuTableViewController.m; sourceTree = "<group>"; };
 		01DED0FE1CFBE77600CF60C0 /* MyShopLiD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyShopLiD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +167,7 @@
 				01DED1121CFBE77600CF60C0 /* Info.plist */,
 				01DED10D1CFBE77600CF60C0 /* Assets.xcassets */,
 				01DED1021CFBE77600CF60C0 /* main.m */,
+				01A2AB1C1CFD1888007B48DB /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,6 +379,8 @@
 		01DED1541CFBEA4600CF60C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01A2AB1D1CFD1E0B007B48DB /* LiDMenuTableView.h */,
+				01A2AB1E1CFD1E0B007B48DB /* LiDMenuTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -672,6 +679,7 @@
 				01DED1571CFBEB0800CF60C0 /* LiDLaunchView.m in Sources */,
 				01DED16C1CFBEF9000CF60C0 /* LiDNewsViewController.m in Sources */,
 				01DED1631CFBEF7100CF60C0 /* LiDExploreViewController.m in Sources */,
+				01A2AB1F1CFD1E0B007B48DB /* LiDMenuTableView.m in Sources */,
 				01DED1061CFBE77600CF60C0 /* AppDelegate.m in Sources */,
 				01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */,
 				01DED1661CFBEF7E00CF60C0 /* LiDLiveViewController.m in Sources */,
@@ -820,6 +828,7 @@
 			baseConfigurationReference = 82C1AD9A5D24A803C0AE02D6 /* Pods-MyShopLiD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = MyShopLiD/PrefixHeader.pch;
 				INFOPLIST_FILE = MyShopLiD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -833,6 +842,7 @@
 			baseConfigurationReference = 7D5B60418F0A86307F057A1E /* Pods-MyShopLiD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = MyShopLiD/PrefixHeader.pch;
 				INFOPLIST_FILE = MyShopLiD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

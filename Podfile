@@ -9,7 +9,7 @@ target 'MyShopLiD' do
   pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'LLSlideMenu'
-  
+  pod 'CDRTranslucentSideBar'
 
   target 'MyShopLiDTests' do
     inherit! :search_paths

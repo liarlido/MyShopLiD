@@ -7,15 +7,27 @@
 //
 
 #import "LiDExploreViewController.h"
-#import <LLSlideMenu.h>
 
-@interface LiDExploreViewController (){
-    LLSlideMenu *_slideMenu;
-}
+
+@interface LiDExploreViewController ()<CDRTranslucentSideBarDelegate,UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) CDRTranslucentSideBar *slideMenu;
+
 @end
 
 @implementation LiDExploreViewController
 
+#pragma mark 懒加载
+-(CDRTranslucentSideBar *)slideMenu{
+
+    if (!_slideMenu) {
+        _slideMenu=[[CDRTranslucentSideBar alloc]init];
+    }
+    return _slideMenu;
+}
+
+
+#pragma mark 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setLeftMenu];
@@ -24,29 +36,28 @@
 
 -(void)setLeftMenu{
 
-    _slideMenu=[[LLSlideMenu alloc]init];
+    [self.slideMenu setDelegate:self];
+    [self.slideMenu setSideBarWidth:200];
     
-    [self.view addSubview:_slideMenu];
+    UITableView *tableView=[[UITableView alloc]initWithFrame:self.slideMenu.view.frame style:UITableViewStylePlain];
+    [tableView setDelegate:self];
+    [tableView setDataSource:self];
     
-    [_slideMenu setLl_menuWidth:150.0f];
-    [_slideMenu setBackgroundColor:[UIColor lightGrayColor]];
+    [self.slideMenu setContentViewInSideBar:tableView];
     
-    _slideMenu.ll_springDamping = 20;       // 阻力
-    _slideMenu.ll_springVelocity = 15;      // 速度
-    _slideMenu.ll_springFramesNum = 60;
     
 }
 -(void)setupNavigation{
 
-    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"zuoce_edit"] style:UIBarButtonItemStylePlain target:self action:@selector(menuClick:)]];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navzuoce"] style:UIBarButtonItemStylePlain target:self action:@selector(menuClick:)]];
     [self.navigationItem setTitleView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Homepage_title_icon"]]];
-    
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"gouwuche_side"] style:UIBarButtonItemStylePlain target:self action:@selector(shopcarClick:)]];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navshopcar"] style:UIBarButtonItemStylePlain target:self action:@selector(shopcarClick:)]];
 }
 
 -(void)menuClick:(UIBarButtonItem *)item{
 
-    [_slideMenu ll_openSlideMenu];
+    [self.slideMenu show];
 }
 
 -(void)shopcarClick:(UIBarButtonItem *)item{
@@ -57,6 +68,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+#pragma mark<UITableViewDelegate>
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
+    return cell;
+}
+
+
 
 /*
 #pragma mark - Navigation

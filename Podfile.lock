@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - CDRTranslucentSideBar (1.0.3)
   - LLSlideMenu (1.0.4)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
@@ -21,14 +22,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - CDRTranslucentSideBar
   - LLSlideMenu
   - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CDRTranslucentSideBar: b13a1792a8c495ea8f2356846a95bf7119cec7b0
   LLSlideMenu: e98f45dc04cdbbf19b4e6922b9078dc519292920
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
 
-PODFILE CHECKSUM: a3ff55a85de0b8a21498f6e46fe8a6603210da5e
+PODFILE CHECKSUM: 2b74b46341bf7f90b2a8e64c1475e3486e351226
 
 COCOAPODS: 1.0.0

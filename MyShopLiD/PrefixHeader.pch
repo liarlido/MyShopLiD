@@ -9,8 +9,16 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+/** 图片前缀 */
+#define IMGPrefix @"http://whoolala-images-cn.oss-cn-shanghai.aliyuncs.com/x%@"
+#define IBrand @"http://www.whoolala.com/merchants/viewMerchants?directPage=%@&return_format=json"
+
 #import <CDRTranslucentSideBar.h>
-
-
+#import <UIImageView+WebCache.h>
+#import <AFHTTPSessionManager.h>
+#import <YYModel.h>
+#import <Masonry.h>
+#import <MJRefresh.h>
+#import <SVProgressHUD.h>
 
 #endif /* PrefixHeader_pch */

@@ -5,9 +5,11 @@ target 'MyShopLiD' do
  
   pod 'AFNetworking'
   pod 'SDWebImage'
-  pod 'LLSlideMenu'
+  pod 'YYModel'
   pod 'CDRTranslucentSideBar'
-  pod 'MXSegmentedPager'
+  pod 'Masonry'
+  pod 'MJRefresh'
+  pod 'SVProgressHUD'
 
 
   target 'MyShopLiDTests' do

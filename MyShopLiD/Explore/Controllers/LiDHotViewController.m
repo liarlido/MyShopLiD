@@ -17,15 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UILabel *label=[[UILabel alloc]init];
-    [label setText:NSStringFromClass([self class])];
-    [label setFrame:CGRectMake(100, 200, 50, 25)];
-    [self.view addSubview:label];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self setupTopLine];
+}
+
+-(void)setupTopLine{
+
+    
 }
 
 /*

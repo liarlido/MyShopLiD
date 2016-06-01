@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011DE8641CFE729B00C175D4 /* LiDBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DE8621CFE729B00C175D4 /* LiDBrandViewController.m */; };
+		011DE8691CFE749000C175D4 /* LiDBrandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DE8671CFE749000C175D4 /* LiDBrandViewCell.m */; };
+		011DE86A1CFE749000C175D4 /* LiDBrandViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DE8681CFE749000C175D4 /* LiDBrandViewCell.xib */; };
+		011DE86D1CFE78E400C175D4 /* LiDBrandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DE86C1CFE78E400C175D4 /* LiDBrandModel.m */; };
 		0144C84B1CFD7AF100AA06CF /* LiDLadyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0144C84A1CFD7AF100AA06CF /* LiDLadyViewController.m */; };
 		0144C84E1CFD7AFB00AA06CF /* LiDManViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0144C84D1CFD7AFB00AA06CF /* LiDManViewController.m */; };
 		0144C8511CFD7B0800AA06CF /* LiDHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0144C8501CFD7B0800AA06CF /* LiDHotViewController.m */; };
-		0144C8541CFD7B2300AA06CF /* LiDBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0144C8531CFD7B2300AA06CF /* LiDBrandViewController.m */; };
 		01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */; };
 		01C43CB21CFDCB210088D1D8 /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C43CA71CFDCB210088D1D8 /* UIView+ZJFrame.m */; };
 		01C43CB31CFDCB210088D1D8 /* ZJContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C43CA91CFDCB210088D1D8 /* ZJContentView.m */; };
@@ -57,14 +60,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011DE8611CFE729B00C175D4 /* LiDBrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDBrandViewController.h; sourceTree = "<group>"; };
+		011DE8621CFE729B00C175D4 /* LiDBrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDBrandViewController.m; sourceTree = "<group>"; };
+		011DE8661CFE749000C175D4 /* LiDBrandViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDBrandViewCell.h; sourceTree = "<group>"; };
+		011DE8671CFE749000C175D4 /* LiDBrandViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDBrandViewCell.m; sourceTree = "<group>"; };
+		011DE8681CFE749000C175D4 /* LiDBrandViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiDBrandViewCell.xib; sourceTree = "<group>"; };
+		011DE86B1CFE78E400C175D4 /* LiDBrandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDBrandModel.h; sourceTree = "<group>"; };
+		011DE86C1CFE78E400C175D4 /* LiDBrandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDBrandModel.m; sourceTree = "<group>"; };
 		0144C8491CFD7AF100AA06CF /* LiDLadyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDLadyViewController.h; sourceTree = "<group>"; };
 		0144C84A1CFD7AF100AA06CF /* LiDLadyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDLadyViewController.m; sourceTree = "<group>"; };
 		0144C84C1CFD7AFB00AA06CF /* LiDManViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDManViewController.h; sourceTree = "<group>"; };
 		0144C84D1CFD7AFB00AA06CF /* LiDManViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDManViewController.m; sourceTree = "<group>"; };
 		0144C84F1CFD7B0800AA06CF /* LiDHotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDHotViewController.h; sourceTree = "<group>"; };
 		0144C8501CFD7B0800AA06CF /* LiDHotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDHotViewController.m; sourceTree = "<group>"; };
-		0144C8521CFD7B2300AA06CF /* LiDBrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDBrandViewController.h; sourceTree = "<group>"; };
-		0144C8531CFD7B2300AA06CF /* LiDBrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDBrandViewController.m; sourceTree = "<group>"; };
 		01A2AB1C1CFD1888007B48DB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		01BCD9141CFC45C400383A16 /* LiDMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDMenuTableViewController.h; sourceTree = "<group>"; };
 		01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMenuTableViewController.m; sourceTree = "<group>"; };
@@ -418,8 +426,8 @@
 				0144C84D1CFD7AFB00AA06CF /* LiDManViewController.m */,
 				0144C84F1CFD7B0800AA06CF /* LiDHotViewController.h */,
 				0144C8501CFD7B0800AA06CF /* LiDHotViewController.m */,
-				0144C8521CFD7B2300AA06CF /* LiDBrandViewController.h */,
-				0144C8531CFD7B2300AA06CF /* LiDBrandViewController.m */,
+				011DE8611CFE729B00C175D4 /* LiDBrandViewController.h */,
+				011DE8621CFE729B00C175D4 /* LiDBrandViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -427,6 +435,8 @@
 		01DED1531CFBEA4600CF60C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				011DE86B1CFE78E400C175D4 /* LiDBrandModel.h */,
+				011DE86C1CFE78E400C175D4 /* LiDBrandModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -434,6 +444,9 @@
 		01DED1541CFBEA4600CF60C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				011DE8661CFE749000C175D4 /* LiDBrandViewCell.h */,
+				011DE8671CFE749000C175D4 /* LiDBrandViewCell.m */,
+				011DE8681CFE749000C175D4 /* LiDBrandViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -575,6 +588,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011DE86A1CFE749000C175D4 /* LiDBrandViewCell.xib in Resources */,
 				01DED1111CFBE77600CF60C0 /* LaunchScreen.storyboard in Resources */,
 				01DED10E1CFBE77600CF60C0 /* Assets.xcassets in Resources */,
 				01DED10C1CFBE77600CF60C0 /* Main.storyboard in Resources */,
@@ -725,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011DE8641CFE729B00C175D4 /* LiDBrandViewController.m in Sources */,
 				01DED15A1CFBEB2000CF60C0 /* LiDBaseViewController.m in Sources */,
 				01DED1601CFBEF1200CF60C0 /* LiDNavigationController.m in Sources */,
 				01C43CB21CFDCB210088D1D8 /* UIView+ZJFrame.m in Sources */,
@@ -736,13 +751,14 @@
 				01DED16C1CFBEF9000CF60C0 /* LiDNewsViewController.m in Sources */,
 				01DED1631CFBEF7100CF60C0 /* LiDExploreViewController.m in Sources */,
 				0144C84B1CFD7AF100AA06CF /* LiDLadyViewController.m in Sources */,
-				0144C8541CFD7B2300AA06CF /* LiDBrandViewController.m in Sources */,
 				01DED1061CFBE77600CF60C0 /* AppDelegate.m in Sources */,
+				011DE8691CFE749000C175D4 /* LiDBrandViewCell.m in Sources */,
 				01C43CB51CFDCB210088D1D8 /* ZJScrollPageView.m in Sources */,
 				01C43CB61CFDCB210088D1D8 /* ZJScrollSegmentView.m in Sources */,
 				01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */,
 				01C43CB71CFDCB210088D1D8 /* ZJSegmentStyle.m in Sources */,
 				01DED1661CFBEF7E00CF60C0 /* LiDLiveViewController.m in Sources */,
+				011DE86D1CFE78E400C175D4 /* LiDBrandModel.m in Sources */,
 				0144C84E1CFD7AFB00AA06CF /* LiDManViewController.m in Sources */,
 				01C43CB41CFDCB210088D1D8 /* ZJCustomLabel.m in Sources */,
 				01DED1031CFBE77600CF60C0 /* main.m in Sources */,

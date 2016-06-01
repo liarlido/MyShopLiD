@@ -80,10 +80,11 @@
 -(void)setLeftMenu{
 
     [self.slideMenu setDelegate:self];
-    [self.slideMenu setSideBarWidth:200];
+    [self.slideMenu setSideBarWidth:300];
     
     UIStoryboard *sb=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITableViewController *menuTableView=[sb instantiateViewControllerWithIdentifier:NSStringFromClass([LiDMenuTableViewController class])];
+    
     [self addChildViewController:menuTableView];
     
     
@@ -99,10 +100,6 @@
 
 -(void)addPageView{
     
-    
-    
-    
-    
     self.automaticallyAdjustsScrollViewInsets=NO;
     ZJSegmentStyle *style = [[ZJSegmentStyle alloc] init];
     // 缩放标题
@@ -112,12 +109,13 @@
     style.scaleTitle=YES;
     style.titleFont=[UIFont systemFontOfSize:17];
     style.scrollTitle=NO;
-    style.normalTitleColor=[UIColor grayColor];
-    style.selectedTitleColor=[UIColor whiteColor];
+    style.normalTitleColor=[UIColor colorWithRed:132/255.0f green:132/255.0f blue:132/255.0f alpha:1];
+    style.selectedTitleColor=[UIColor colorWithRed:1 green:1 blue:1 alpha:1];
     
     
     ZJScrollPageView *pageView=[[ZJScrollPageView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64) segmentStyle:style childVcs:self.controllerArray parentViewController:self];
     [self.view addSubview:pageView];
+    [pageView setSelectedIndex:1 animated:NO];
     
     
 }

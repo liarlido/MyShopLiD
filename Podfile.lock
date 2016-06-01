@@ -15,35 +15,32 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - CDRTranslucentSideBar (1.0.3)
-  - HMSegmentedControl (1.5.2)
-  - LLSlideMenu (1.0.4)
-  - MXPagerView (0.1.2)
-  - MXParallaxHeader (0.4.3)
-  - MXSegmentedPager (3.0.4):
-    - HMSegmentedControl (~> 1.5.2)
-    - MXPagerView (~> 0.1.2)
-    - MXParallaxHeader (~> 0.4.3)
+  - Masonry (1.0.0)
+  - MJRefresh (3.1.0)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
+  - SVProgressHUD (2.0.3)
+  - YYModel (1.0.3)
 
 DEPENDENCIES:
   - AFNetworking
   - CDRTranslucentSideBar
-  - LLSlideMenu
-  - MXSegmentedPager
+  - Masonry
+  - MJRefresh
   - SDWebImage
+  - SVProgressHUD
+  - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CDRTranslucentSideBar: b13a1792a8c495ea8f2356846a95bf7119cec7b0
-  HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
-  LLSlideMenu: e98f45dc04cdbbf19b4e6922b9078dc519292920
-  MXPagerView: b0cc1695ff8470a1bb1628e25e8878eb94606a60
-  MXParallaxHeader: 96d9e7c392a26b29b97ddc34bff904a9c0baef27
-  MXSegmentedPager: 48a6129c823a3a5c6f5809c43463dbdf8351f528
+  Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
 
-PODFILE CHECKSUM: 3af7007b34c4790e6f68bd49188b0abc615356fe
+PODFILE CHECKSUM: 1aa443507921fa455cded5630b66fd5d329f07fb
 
 COCOAPODS: 1.0.0

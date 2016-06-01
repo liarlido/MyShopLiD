@@ -115,7 +115,7 @@
     
     ZJScrollPageView *pageView=[[ZJScrollPageView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-64) segmentStyle:style childVcs:self.controllerArray parentViewController:self];
     [self.view addSubview:pageView];
-    [pageView setSelectedIndex:1 animated:NO];
+    
     
     
 }

@@ -42,7 +42,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-uv-8cU" userLabel="percentLabel">
                         <rect key="frame" x="240" y="442" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.37990035979999998" green="0.38559241259999999" blue="0.41472986280000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBV-dL-VFk" userLabel="priceLabel">
@@ -58,13 +58,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-TH-CO1" userLabel="typeLabel">
-                        <rect key="frame" x="5" y="389" width="50" height="17"/>
+                        <rect key="frame" x="5" y="384" width="50" height="17"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="M5G-zR-9B8"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -111,7 +111,7 @@
                 <constraint firstItem="wKv-Oo-Xcx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Zcu-WI-msJ"/>
                 <constraint firstAttribute="trailing" secondItem="Pdu-hN-ueq" secondAttribute="trailing" constant="5" id="evB-LE-O9u"/>
                 <constraint firstItem="iUn-mS-YA6" firstAttribute="top" secondItem="1gp-u1-wkZ" secondAttribute="top" constant="10" id="gO3-rN-coN"/>
-                <constraint firstItem="CVO-TH-CO1" firstAttribute="top" secondItem="qcX-zM-Ct2" secondAttribute="bottom" constant="-25" id="lL0-uC-8S1"/>
+                <constraint firstItem="CVO-TH-CO1" firstAttribute="top" secondItem="qcX-zM-Ct2" secondAttribute="bottom" constant="-30" id="lL0-uC-8S1"/>
                 <constraint firstItem="1gp-u1-wkZ" firstAttribute="top" secondItem="WBV-dL-VFk" secondAttribute="bottom" constant="20" id="ltC-B8-2rJ"/>
                 <constraint firstItem="wKv-Oo-Xcx" firstAttribute="top" secondItem="qcX-zM-Ct2" secondAttribute="bottom" constant="5" id="sl2-uz-Uji"/>
                 <constraint firstItem="WBV-dL-VFk" firstAttribute="leading" secondItem="wKv-Oo-Xcx" secondAttribute="leading" id="tF8-Fb-K0r"/>

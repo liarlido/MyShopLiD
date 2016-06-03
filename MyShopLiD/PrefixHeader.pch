@@ -20,7 +20,8 @@
 #define HotIMGPrefix @"http://whoolala-images-cn.oss-cn-shanghai.aliyuncs.com/x400%@"
 /** 数据接口 */
 #define IHot @"http://www.whoolala.com/shoppingMall/showHotProducts?directPage=%@&lang=zh_CN&return_format=json"
-
+/** 分类商品接口 */
+#define IManAndLady @"http://www.whoolala.com/postsAPI/showPostsByCategory?categoryID=%ld&directPage=%@&return_format=json"
 
 
 #import <CDRTranslucentSideBar.h>

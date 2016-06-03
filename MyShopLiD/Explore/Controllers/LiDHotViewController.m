@@ -124,7 +124,7 @@ NSString *const cellIdentifier=@"collectionCell";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     LiDHotCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    
+
     cell.model=self.dataArray[indexPath.row];
     return cell;
 }
@@ -147,7 +147,8 @@ NSString *const cellIdentifier=@"collectionCell";
 
     
     CGFloat width=(self.view.frame.size.width/2.0)-15;
-    return CGSizeMake(width, 365);
+    CGFloat height=(self.view.frame.size.height+168)/2.0;
+    return CGSizeMake(width, height);
 }
 
 

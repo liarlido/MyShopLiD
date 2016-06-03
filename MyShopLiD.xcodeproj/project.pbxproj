@@ -21,6 +21,12 @@
 		014B8D6C1D000F1E0089B55A /* ParentCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B8D6B1D000F1E0089B55A /* ParentCategory.m */; };
 		014B8D6F1D0011490089B55A /* MechantInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B8D6E1D0011490089B55A /* MechantInfo.m */; };
 		014B8D721D0018FA0089B55A /* LiDHotProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B8D711D0018FA0089B55A /* LiDHotProductModel.m */; };
+		0194F70A1D01615B002DBB35 /* LiDManViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7081D01615B002DBB35 /* LiDManViewCell.m */; };
+		0194F70B1D01615B002DBB35 /* LiDManViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0194F7091D01615B002DBB35 /* LiDManViewCell.xib */; };
+		0194F70E1D0172DC002DBB35 /* LiDManModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F70D1D0172DC002DBB35 /* LiDManModel.m */; };
+		0194F7141D01740B002DBB35 /* postObjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7131D01740B002DBB35 /* postObjectInfo.m */; };
+		0194F7181D018997002DBB35 /* LiDManCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7161D018997002DBB35 /* LiDManCell.m */; };
+		0194F7191D018997002DBB35 /* LiDManCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0194F7171D018997002DBB35 /* LiDManCell.xib */; };
 		01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */; };
 		01BD62091CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD62071CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m */; };
 		01BD620A1CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BD62081CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib */; };
@@ -96,6 +102,16 @@
 		014B8D6E1D0011490089B55A /* MechantInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MechantInfo.m; sourceTree = "<group>"; };
 		014B8D701D0018FA0089B55A /* LiDHotProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDHotProductModel.h; sourceTree = "<group>"; };
 		014B8D711D0018FA0089B55A /* LiDHotProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDHotProductModel.m; sourceTree = "<group>"; };
+		0194F7071D01615B002DBB35 /* LiDManViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDManViewCell.h; sourceTree = "<group>"; };
+		0194F7081D01615B002DBB35 /* LiDManViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDManViewCell.m; sourceTree = "<group>"; };
+		0194F7091D01615B002DBB35 /* LiDManViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiDManViewCell.xib; sourceTree = "<group>"; };
+		0194F70C1D0172DC002DBB35 /* LiDManModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDManModel.h; sourceTree = "<group>"; };
+		0194F70D1D0172DC002DBB35 /* LiDManModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDManModel.m; sourceTree = "<group>"; };
+		0194F7121D01740B002DBB35 /* postObjectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = postObjectInfo.h; sourceTree = "<group>"; };
+		0194F7131D01740B002DBB35 /* postObjectInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = postObjectInfo.m; sourceTree = "<group>"; };
+		0194F7151D018997002DBB35 /* LiDManCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDManCell.h; sourceTree = "<group>"; };
+		0194F7161D018997002DBB35 /* LiDManCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDManCell.m; sourceTree = "<group>"; };
+		0194F7171D018997002DBB35 /* LiDManCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiDManCell.xib; sourceTree = "<group>"; };
 		01A2AB1C1CFD1888007B48DB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		01BCD9141CFC45C400383A16 /* LiDMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDMenuTableViewController.h; sourceTree = "<group>"; };
 		01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMenuTableViewController.m; sourceTree = "<group>"; };
@@ -309,6 +325,8 @@
 				014B8D6B1D000F1E0089B55A /* ParentCategory.m */,
 				014B8D6D1D0011490089B55A /* MechantInfo.h */,
 				014B8D6E1D0011490089B55A /* MechantInfo.m */,
+				0194F7121D01740B002DBB35 /* postObjectInfo.h */,
+				0194F7131D01740B002DBB35 /* postObjectInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -477,6 +495,8 @@
 				011DE86C1CFE78E400C175D4 /* LiDBrandModel.m */,
 				014B8D701D0018FA0089B55A /* LiDHotProductModel.h */,
 				014B8D711D0018FA0089B55A /* LiDHotProductModel.m */,
+				0194F70C1D0172DC002DBB35 /* LiDManModel.h */,
+				0194F70D1D0172DC002DBB35 /* LiDManModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -490,6 +510,12 @@
 				01BD62061CFFC1A900B3CA87 /* LiDHotCollectionViewCell.h */,
 				01BD62071CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m */,
 				01BD62081CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib */,
+				0194F7071D01615B002DBB35 /* LiDManViewCell.h */,
+				0194F7081D01615B002DBB35 /* LiDManViewCell.m */,
+				0194F7091D01615B002DBB35 /* LiDManViewCell.xib */,
+				0194F7151D018997002DBB35 /* LiDManCell.h */,
+				0194F7161D018997002DBB35 /* LiDManCell.m */,
+				0194F7171D018997002DBB35 /* LiDManCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -632,9 +658,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				011DE86A1CFE749000C175D4 /* LiDBrandViewCell.xib in Resources */,
+				0194F70B1D01615B002DBB35 /* LiDManViewCell.xib in Resources */,
 				01DED1111CFBE77600CF60C0 /* LaunchScreen.storyboard in Resources */,
 				01BD620A1CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib in Resources */,
 				01DED10E1CFBE77600CF60C0 /* Assets.xcassets in Resources */,
+				0194F7191D018997002DBB35 /* LiDManCell.xib in Resources */,
 				01DED10C1CFBE77600CF60C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,6 +811,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0194F7181D018997002DBB35 /* LiDManCell.m in Sources */,
 				011DE8641CFE729B00C175D4 /* LiDBrandViewController.m in Sources */,
 				014B8D661D000E530089B55A /* CategoryInfo.m in Sources */,
 				014B8D6C1D000F1E0089B55A /* ParentCategory.m in Sources */,
@@ -795,6 +824,7 @@
 				01DED1091CFBE77600CF60C0 /* ViewController.m in Sources */,
 				0144C8511CFD7B0800AA06CF /* LiDHotViewController.m in Sources */,
 				01C43CB31CFDCB210088D1D8 /* ZJContentView.m in Sources */,
+				0194F7141D01740B002DBB35 /* postObjectInfo.m in Sources */,
 				01DED1691CFBEF8700CF60C0 /* LiDMineViewController.m in Sources */,
 				01DED1571CFBEB0800CF60C0 /* LiDLaunchView.m in Sources */,
 				01DED16C1CFBEF9000CF60C0 /* LiDNewsViewController.m in Sources */,
@@ -807,7 +837,9 @@
 				01C43CB61CFDCB210088D1D8 /* ZJScrollSegmentView.m in Sources */,
 				01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */,
 				01C43CB71CFDCB210088D1D8 /* ZJSegmentStyle.m in Sources */,
+				0194F70E1D0172DC002DBB35 /* LiDManModel.m in Sources */,
 				01DED1661CFBEF7E00CF60C0 /* LiDLiveViewController.m in Sources */,
+				0194F70A1D01615B002DBB35 /* LiDManViewCell.m in Sources */,
 				011DE86D1CFE78E400C175D4 /* LiDBrandModel.m in Sources */,
 				01BD62091CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m in Sources */,
 				0144C84E1CFD7AFB00AA06CF /* LiDManViewController.m in Sources */,

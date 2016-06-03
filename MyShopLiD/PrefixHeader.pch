@@ -9,9 +9,19 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+
+/** 品牌页面 */
 /** 图片前缀 */
-#define IMGPrefix @"http://whoolala-images-cn.oss-cn-shanghai.aliyuncs.com/x%@"
+#define BrandIMGPrefix @"http://whoolala-images-cn.oss-cn-shanghai.aliyuncs.com/x%@"
+/** 数据接口 */
 #define IBrand @"http://www.whoolala.com/merchants/viewMerchants?directPage=%@&return_format=json"
+/** 最热页面 */
+/** 图片前缀 */
+#define HotIMGPrefix @"http://whoolala-images-cn.oss-cn-shanghai.aliyuncs.com/x400%@"
+/** 数据接口 */
+#define IHot @"http://www.whoolala.com/shoppingMall/showHotProducts?directPage=%@&lang=zh_CN&return_format=json"
+
+
 
 #import <CDRTranslucentSideBar.h>
 #import <UIImageView+WebCache.h>
@@ -20,5 +30,9 @@
 #import <Masonry.h>
 #import <MJRefresh.h>
 #import <SVProgressHUD.h>
+
+
+/** RGB颜色 */
+#define RGBCOLOR(r, g, b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 
 #endif /* PrefixHeader_pch */

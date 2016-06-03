@@ -195,7 +195,6 @@ NSString * const brandIdentifier=@"brandCell";
         
     }
     [self.searchBar becomeFirstResponder];
-    
 }
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
@@ -204,7 +203,13 @@ NSString * const brandIdentifier=@"brandCell";
     [self.searchBar setShowsCancelButton:NO];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    if ([self.searchBar isFirstResponder]) {
+        [self.searchBar resignFirstResponder];
+        [self.searchBar setShowsCancelButton:NO];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

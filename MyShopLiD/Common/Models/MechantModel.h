@@ -1,42 +1,25 @@
 //
-//  LiDBrandModel.h
+//  MechantModel.h
 //  MyShopLiD
 //
-//  Created by LiaRLido on 16/6/1.
+//  Created by LiaRLido on 16/6/2.
 //  Copyright © 2016年 LiaRLido. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@class Merchantinfo,Merchantobj,Imggroup,Urlinfo;
-@interface LiDBrandModel : NSObject
 
+@class MeImggroup,MeUrlinfo;
+@interface MechantModel : NSObject
 
-@property (nonatomic, strong) Merchantinfo *merchantinfo;
-
-
-
-@end
-
-@interface Merchantinfo : NSObject
-
-@property (nonatomic, copy) NSString *profileURL;
-
-@property (nonatomic, strong) Merchantobj *merchantobj;
-
-@property (nonatomic, copy) NSString *redirectURL;
-
-@end
-
-@interface Merchantobj : NSObject
 
 @property (nonatomic, copy) NSString *dateCreated;
 
 @property (nonatomic, copy) NSString *found_time;
 
-@property (nonatomic, strong) Imggroup *imgGroup;
+@property (nonatomic, strong) MeImggroup *imgGroup;
 
-@property (nonatomic, assign) NSInteger id;
+@property (nonatomic, assign) NSInteger meid;
 
 @property (nonatomic, copy) NSString *logo;
 
@@ -60,7 +43,7 @@
 
 @property (nonatomic, copy) NSString *desc;
 
-@property (nonatomic, strong) Urlinfo *urlInfo;
+@property (nonatomic, strong) MeUrlinfo *urlInfo;
 
 @property (nonatomic, copy) NSString *alipay;
 
@@ -110,9 +93,10 @@
 
 @property (nonatomic, copy) NSString *paypal;
 
+
 @end
 
-@interface Imggroup : NSObject
+@interface MeImggroup : NSObject
 
 @property (nonatomic, copy) NSString *avatar;
 
@@ -120,7 +104,7 @@
 
 @end
 
-@interface Urlinfo : NSObject
+@interface MeUrlinfo : NSObject
 
 @property (nonatomic, copy) NSString *profile;
 

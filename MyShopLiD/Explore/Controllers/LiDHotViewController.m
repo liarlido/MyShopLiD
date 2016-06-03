@@ -12,12 +12,16 @@
 #import "LiDHotProductModel.h"
 
 @interface LiDHotViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
 /** collectionView */
 @property(nonatomic,strong)UICollectionView *collectionView;
+
 /** 数据源 */
 @property(nonatomic,strong)NSMutableArray *dataArray;
+
 /** httpManager */
 @property(nonatomic,strong)AFHTTPSessionManager *httpManager;
+
 /** 当前页 */
 @property(nonatomic,assign)NSInteger currentPage;
 
@@ -53,12 +57,16 @@ NSString *const cellIdentifier=@"collectionCell";
     
     [self setupTopLine];
     
-    [self requestData];
+    [self firstLoad];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+-(void)firstLoad{
+    [self.collectionView.mj_header beginRefreshing];
 }
 
 -(void)setupTopLine{
@@ -79,7 +87,7 @@ NSString *const cellIdentifier=@"collectionCell";
     [self.view addSubview:self.collectionView];
     [self.collectionView setBackgroundColor:[UIColor grayColor]];
     
-    
+    [self.collectionView setBackgroundColor:[UIColor whiteColor]];
     
     /**
      *  注册头视图
@@ -93,9 +101,15 @@ NSString *const cellIdentifier=@"collectionCell";
     /**
      *  上拉加载与下拉刷新
      */
+    __weak typeof(self) weakSelf=self;
     self.collectionView.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self.collectionView.mj_header setHidden:NO];
-        [self requestData];
+        [weakSelf.collectionView.mj_header setHidden:NO];
+        [weakSelf requestData];
+    }];
+    self.collectionView.mj_footer=[MJRefreshAutoFooter footerWithRefreshingBlock:^{
+        weakSelf.currentPage++;
+        [weakSelf requestData];
+        [weakSelf.collectionView.mj_header setHidden:YES];
     }];
     
 }
@@ -110,7 +124,6 @@ NSString *const cellIdentifier=@"collectionCell";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
     LiDHotCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    [cell setBackgroundColor:RGBCOLOR(arc4random()%256, arc4random()%256, arc4random()%256)];
     
     cell.model=self.dataArray[indexPath.row];
     return cell;
@@ -141,22 +154,35 @@ NSString *const cellIdentifier=@"collectionCell";
 
 #pragma mark -请求数据
 -(void)requestData{
-
+    if (self.currentPage>=11) {
+    
+        [SVProgressHUD showErrorWithStatus:@"没有更多啦"];
+        return;
+    }
     NSString *curPage=[NSString stringWithFormat:@"%ld",(long)self.currentPage];
     __weak typeof(self) weakSelf=self;
     [self.httpManager GET:[NSString stringWithFormat:IHot,curPage] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [weakSelf.collectionView.mj_header endRefreshing];
-
+        [weakSelf.collectionView.mj_footer endRefreshing];
         /** 解析数据 */
         NSArray *modelArray=[NSArray yy_modelArrayWithClass:[LiDHotProductModel class] json:responseObject[@"hotproductlist"]];
         
         [self.dataArray addObjectsFromArray:modelArray];
         [self.collectionView reloadData];
         
+        [self.collectionView.mj_header setHidden:NO];
+        [self.collectionView.mj_footer setHidden:NO];
+        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        [weakSelf.collectionView.mj_header endRefreshing];
-        NSLog(@"%@",error.localizedDescription);
+        if ([weakSelf.collectionView.mj_header isRefreshing]) {
+            [weakSelf.collectionView.mj_header endRefreshing];
+        }
+        if ([weakSelf.collectionView.mj_footer isRefreshing]) {
+            [weakSelf.collectionView.mj_footer endRefreshing];
+            weakSelf.currentPage--;
+        }
+        [SVProgressHUD showErrorWithStatus:@"对不起,加载失败"];
     }];
 }
 

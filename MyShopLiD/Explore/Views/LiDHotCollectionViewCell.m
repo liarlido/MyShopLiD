@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *goodsImageView;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
-@property (weak, nonatomic) IBOutlet UIView *backView;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *goodsDesc;
 
@@ -40,8 +40,14 @@
     
     self.typeLabel.text=@"类型";
     [self.goodsImageView sd_setImageWithURL:[NSURL URLWithString:model.product.imgGroup.x400] placeholderImage:[UIImage imageNamed:@"headground_1"]];
-    
-    [self.backView bringSubviewToFront:self.typeLabel];
+    [self.contentView bringSubviewToFront:self.typeLabel];
+    self.typeLabel.text=[model.product.categoryInfo lastObject].category.name;
+    self.goodsDesc.text=model.product.name;
+    self.priceLabel.text=[NSString stringWithFormat:@"￥%.2ld",(long)model.product.lowest_price];
+    self.percentLabel.text=[NSString stringWithFormat:@"%ld%%",model.product.likeRatio];
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:model.merchantinfo.merchant.imgGroup.avatar] placeholderImage:[UIImage imageNamed:@"biaoti_1"]];
+    self.shopNameLabel.text=model.merchantinfo.merchant.name;
+    self.shopDescLabel.text=model.merchantinfo.merchant.merchant_signature.length>0?model.merchantinfo.merchant.merchant_signature:@"";
     
 }
 

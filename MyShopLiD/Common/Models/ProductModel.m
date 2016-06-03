@@ -22,7 +22,7 @@
 
 +(NSDictionary *)modelContainerPropertyGenericClass{
     
-    return @{@"imgGroup":[ProImggroup class],@"merchant":[MechantModel class]};
+    return @{@"categoryInfo":[CategoryInfo class]};
 }
 
 

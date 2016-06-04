@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 #import "LiDHotProductModel.h"
 
 @interface postObjectInfo : NSObject
@@ -27,5 +29,8 @@
 
 
 @property(nonatomic,strong)NSArray<LiDHotProductModel *> *productsInfo;
+
+/** cell高度 */
+@property(nonatomic,assign)CGFloat cellHeight;
 
 @end

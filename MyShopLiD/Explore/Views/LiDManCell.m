@@ -29,4 +29,15 @@
 
 }
 
+-(void)setModel:(postObjectInfo *)model{
+
+    _model=model;
+    [self.preImageView sd_setImageWithURL:[NSURL URLWithString:model.coverImg] placeholderImage:[UIImage imageNamed:@"hp_grad"]];
+    self.titleLabel.text=model.title;
+    self.dateLabel.text=model.monthDay;
+//    [self layoutIfNeeded];
+//    model.cellHeight=200;
+}
+
+
 @end

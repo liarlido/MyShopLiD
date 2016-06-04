@@ -9,6 +9,8 @@
 #import "LiDManViewController.h"
 #import "LiDManViewCell.h"
 #import "LiDManModel.h"
+#import "LiDManCell.h"
+#import "postObjectInfo.h"
 
 @interface LiDManViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 /** 表格视图 */
@@ -25,12 +27,15 @@
 
 /** 类别ID */
 @property(nonatomic,assign)NSInteger categoryID;
+/** 总页数 */
+@property(nonatomic,assign)NSInteger totalPage;
 
 /** httpManager */
 @property(nonatomic,strong)AFHTTPSessionManager *httpManager;
 @end
 
-NSString * const manIdentifier=@"manCell";
+NSString * const manIdentifier=@"longCell";
+NSString * const shortCellIdentifier=@"shortCell";
 
 @implementation LiDManViewController
 
@@ -82,9 +87,8 @@ NSString * const manIdentifier=@"manCell";
     //代理
     [self.manTable setDelegate:self];
     [self.manTable setDataSource:self];
-//    [self.manTable setRowHeight:350];
-    self.manTable.estimatedRowHeight = 400;
-    self.manTable.rowHeight = UITableViewAutomaticDimension;
+    [self.manTable setRowHeight:UITableViewAutomaticDimension];
+    
     
     __weak typeof(self) weakSelf=self;
     [self.manTable mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -94,12 +98,18 @@ NSString * const manIdentifier=@"manCell";
     
     self.manTable.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.currentPage=1;
+        
         [weakSelf requestData];
     }];
     
-    self.manTable.mj_footer=[MJRefreshAutoFooter footerWithRefreshingBlock:^{
+    self.manTable.mj_footer=[MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.currentPage++;
-        [weakSelf requestData];
+        if (weakSelf.currentPage>weakSelf.totalPage) {
+            [weakSelf.manTable.mj_footer endRefreshingWithNoMoreData];
+        }else{
+            [weakSelf requestData];
+        }
+        
     }];
     
     
@@ -108,7 +118,7 @@ NSString * const manIdentifier=@"manCell";
      */
     [self.manTable registerNib:[UINib nibWithNibName:NSStringFromClass([LiDManViewCell class]) bundle:nil] forCellReuseIdentifier:manIdentifier];
     
-    
+    [self.manTable registerNib:[UINib nibWithNibName:NSStringFromClass([LiDManCell class]) bundle:nil] forCellReuseIdentifier:shortCellIdentifier];
     
     //searchBar初始化
     self.searchBar=[[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 0, 40)];
@@ -128,23 +138,31 @@ NSString * const manIdentifier=@"manCell";
 }
 #pragma mark -数据请求
 -(void)requestData{
-
+    
+    
     NSString *curPage=[NSString stringWithFormat:@"%ld",(long)self.currentPage];
     __weak typeof(self) weakSelf=self;
     [self.httpManager GET:[NSString stringWithFormat:IManAndLady,(long)self.categoryID,curPage] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         LiDManModel *model=[LiDManModel yy_modelWithJSON:responseObject];
-        [self.dataArray addObjectsFromArray:model.postObjectInfo];
+        weakSelf.totalPage=model.totalPage;
+        
+        if (weakSelf.currentPage==1) {
+            [weakSelf.dataArray removeAllObjects];
+        }
+        
+        [weakSelf.dataArray addObjectsFromArray:model.postObjectInfo];
         
         [weakSelf.manTable.mj_header endRefreshing];
         [weakSelf.manTable.mj_footer endRefreshing];
-        [self.manTable reloadData];
+        [weakSelf.manTable reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"亲,我尽力了..."];
         weakSelf.currentPage--;
         [weakSelf.manTable.mj_header endRefreshing];
         [weakSelf.manTable.mj_footer endRefreshing];
+        NSLog(@"%@",error.localizedDescription);
     }];
 }
 
@@ -157,12 +175,27 @@ NSString * const manIdentifier=@"manCell";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    postObjectInfo *model=self.dataArray[indexPath.row];
+    
+    if (model.productsInfo.count>0) {
+        model.cellHeight=450;
+        LiDManViewCell *cell=[tableView dequeueReusableCellWithIdentifier:manIdentifier forIndexPath:indexPath];
+        cell.model=model;
+        
+        return cell;
+    }else{
+        model.cellHeight=200;
+        LiDManCell *cell=[tableView dequeueReusableCellWithIdentifier:shortCellIdentifier forIndexPath:indexPath];
+        cell.model=model;
+        return cell;
+    }
+}
 
-    LiDManViewCell *cell=[tableView dequeueReusableCellWithIdentifier:manIdentifier forIndexPath:indexPath];
-    cell.model=self.dataArray[indexPath.row];
-    
-    
-    return cell;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    postObjectInfo *model=self.dataArray[indexPath.row];
+    return model.cellHeight;
 }
 
 #pragma mark -<UISearchBarDelegate>

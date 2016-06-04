@@ -10,6 +10,7 @@
 #import "LiDHotProductModel.h"
 #import "ProductModel.h"
 
+
 @interface LiDManViewCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *preImageView;
@@ -53,18 +54,18 @@
         [self.proImg1 sd_setImageWithURL:[NSURL URLWithString:hotModel1.product.imgGroup.x66] placeholderImage:[UIImage imageNamed:@"hp_grad"]];
         self.proNameLabel1.text=hotModel1.product.name;
         
-        LiDHotProductModel *hotModel2=model.productsInfo[0];
-        [self.proImg2 sd_setImageWithURL:[NSURL URLWithString:hotModel2.product.imgGroup.x66] placeholderImage:[UIImage imageNamed:@"hp_grad"]];
+        LiDHotProductModel *hotModel2=model.productsInfo[1];
+        [self.proImg2 sd_setImageWithURL:[NSURL URLWithString:hotModel2.product.imgGroup.x236] placeholderImage:[UIImage imageNamed:@"hp_grad"]];
         self.proNameLabel2.text=hotModel2.product.name;
         
         
-        LiDHotProductModel *hotModel3=model.productsInfo[0];
-        [self.proImg3 sd_setImageWithURL:[NSURL URLWithString:hotModel3.product.imgGroup.x66] placeholderImage:[UIImage imageNamed:@"hp_grad"]];
+        LiDHotProductModel *hotModel3=model.productsInfo[2];
+        [self.proImg3 sd_setImageWithURL:[NSURL URLWithString:hotModel3.product.imgGroup.x400] placeholderImage:[UIImage imageNamed:@"hp_grad"]];
         self.proNameLabel3.text=hotModel3.product.name;
-    }else{
-    
-        [self.productView removeFromSuperview];
     }
+    
+//    [self layoutIfNeeded];
+//    model.cellHeight=400;
     
 }
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "postObjectInfo.h"
 
 @interface LiDManCell : UITableViewCell
-
+@property(nonatomic,strong)postObjectInfo *model;
 @end

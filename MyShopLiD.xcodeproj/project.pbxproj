@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010ABDDD1D02934500E17F35 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010ABDDB1D02934500E17F35 /* LoginViewController.m */; };
+		010ABDDE1D02934500E17F35 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010ABDDC1D02934500E17F35 /* LoginViewController.xib */; };
 		011DE8641CFE729B00C175D4 /* LiDBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DE8621CFE729B00C175D4 /* LiDBrandViewController.m */; };
 		011DE8691CFE749000C175D4 /* LiDBrandViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DE8671CFE749000C175D4 /* LiDBrandViewCell.m */; };
 		011DE86A1CFE749000C175D4 /* LiDBrandViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DE8681CFE749000C175D4 /* LiDBrandViewCell.xib */; };
@@ -75,6 +77,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010ABDDA1D02934500E17F35 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		010ABDDB1D02934500E17F35 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		010ABDDC1D02934500E17F35 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		011DE8611CFE729B00C175D4 /* LiDBrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDBrandViewController.h; sourceTree = "<group>"; };
 		011DE8621CFE729B00C175D4 /* LiDBrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDBrandViewController.m; sourceTree = "<group>"; };
 		011DE8661CFE749000C175D4 /* LiDBrandViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDBrandViewCell.h; sourceTree = "<group>"; };
@@ -201,6 +206,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010ABDD81D02930100E17F35 /* Logins */ = {
+			isa = PBXGroup;
+			children = (
+				010ABDD91D02931500E17F35 /* controllers */,
+			);
+			path = Logins;
+			sourceTree = "<group>";
+		};
+		010ABDD91D02931500E17F35 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				010ABDDA1D02934500E17F35 /* LoginViewController.h */,
+				010ABDDB1D02934500E17F35 /* LoginViewController.m */,
+				010ABDDC1D02934500E17F35 /* LoginViewController.xib */,
+			);
+			name = controllers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		01C43CA51CFDCAFC0088D1D8 /* macros */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +269,7 @@
 		01DED1001CFBE77600CF60C0 /* MyShopLiD */ = {
 			isa = PBXGroup;
 			children = (
+				010ABDD81D02930100E17F35 /* Logins */,
 				01C43CA51CFDCAFC0088D1D8 /* macros */,
 				01DED14E1CFBEA0B00CF60C0 /* News */,
 				01DED14A1CFBE9FF00CF60C0 /* Mine */,
@@ -657,6 +682,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010ABDDE1D02934500E17F35 /* LoginViewController.xib in Resources */,
 				011DE86A1CFE749000C175D4 /* LiDBrandViewCell.xib in Resources */,
 				0194F70B1D01615B002DBB35 /* LiDManViewCell.xib in Resources */,
 				01DED1111CFBE77600CF60C0 /* LaunchScreen.storyboard in Resources */,
@@ -811,6 +837,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010ABDDD1D02934500E17F35 /* LoginViewController.m in Sources */,
 				0194F7181D018997002DBB35 /* LiDManCell.m in Sources */,
 				011DE8641CFE729B00C175D4 /* LiDBrandViewController.m in Sources */,
 				014B8D661D000E530089B55A /* CategoryInfo.m in Sources */,

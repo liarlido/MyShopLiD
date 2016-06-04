@@ -7,8 +7,10 @@
 //
 
 #import "LiDMenuTableViewController.h"
+#import "LoginViewController.h"
 
 @interface LiDMenuTableViewController ()
+- (IBAction)loginAction:(UIButton *)sender;
 
 @end
 
@@ -26,4 +28,9 @@
 
 #pragma mark - Table view data source
 
+- (IBAction)loginAction:(UIButton *)sender {
+    LoginViewController *loginVC=[[LoginViewController alloc]init];
+    [self presentViewController:loginVC animated:YES completion:nil];
+    
+}
 @end

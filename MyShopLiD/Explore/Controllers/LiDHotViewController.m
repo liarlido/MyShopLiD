@@ -10,6 +10,7 @@
 #import "LiDHotCollectionViewCell.h"
 #import "MechantInfo.h"
 #import "LiDHotProductModel.h"
+#import "HotDetailViewController.h"
 
 @interface LiDHotViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -58,6 +59,12 @@ NSString *const cellIdentifier=@"collectionCell";
     [self setupTopLine];
     
     [self firstLoad];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+
+    [super viewWillDisappear:animated];
+    [self.httpManager.operationQueue cancelAllOperations];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -142,6 +149,22 @@ NSString *const cellIdentifier=@"collectionCell";
 }
 
 
+
+#pragma mark -选中事件
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    LiDHotProductModel *model=self.dataArray[indexPath.row];
+    
+    HotDetailViewController *hotDetail=[[HotDetailViewController alloc]init];
+    hotDetail.proDtailApi=model.productDetailAPI;
+    [self.navigationController pushViewController:hotDetail animated:YES];
+    
+    
+    
+    
+}
+
+
 #pragma mark -cell尺寸
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
 
@@ -175,6 +198,7 @@ NSString *const cellIdentifier=@"collectionCell";
         [self.collectionView.mj_footer setHidden:NO];
         
         
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if ([weakSelf.collectionView.mj_header isRefreshing]) {
             [weakSelf.collectionView.mj_header endRefreshing];
@@ -186,5 +210,8 @@ NSString *const cellIdentifier=@"collectionCell";
         [SVProgressHUD showErrorWithStatus:@"对不起,加载失败"];
     }];
 }
+
+
+
 
 @end

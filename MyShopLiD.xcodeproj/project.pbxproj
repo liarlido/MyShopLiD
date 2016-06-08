@@ -29,6 +29,18 @@
 		0194F7141D01740B002DBB35 /* postObjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7131D01740B002DBB35 /* postObjectInfo.m */; };
 		0194F7181D018997002DBB35 /* LiDManCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7161D018997002DBB35 /* LiDManCell.m */; };
 		0194F7191D018997002DBB35 /* LiDManCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0194F7171D018997002DBB35 /* LiDManCell.xib */; };
+		01AEBF8B1D05193E00B6705C /* HotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBF891D05193E00B6705C /* HotDetailViewController.m */; };
+		01AEBF8C1D05193E00B6705C /* HotDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEBF8A1D05193E00B6705C /* HotDetailViewController.xib */; };
+		01AEBF951D051F3F00B6705C /* HotDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBF941D051F3F00B6705C /* HotDetailModel.m */; };
+		01AEBF981D05264A00B6705C /* skuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBF971D05264A00B6705C /* skuModel.m */; };
+		01AEBF9C1D054F6700B6705C /* skuColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBF9B1D054F6700B6705C /* skuColor.m */; };
+		01AEBF9F1D05506700B6705C /* skuSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBF9E1D05506700B6705C /* skuSize.m */; };
+		01AEBFAB1D055AE900B6705C /* SkuColorSizeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFAA1D055AE900B6705C /* SkuColorSizeList.m */; };
+		01AEBFAF1D055BE900B6705C /* recommendProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFAE1D055BE900B6705C /* recommendProduct.m */; };
+		01AEBFB61D05682D00B6705C /* HotDetailHeaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFB41D05682D00B6705C /* HotDetailHeaderVC.m */; };
+		01AEBFB71D05682D00B6705C /* HotDetailHeaderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEBFB51D05682D00B6705C /* HotDetailHeaderVC.xib */; };
+		01AEBFBA1D06757700B6705C /* UIView+LiDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFB91D06757700B6705C /* UIView+LiDExtension.m */; };
+		01AEBFBC1D06759700B6705C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFBB1D06759700B6705C /* Foundation+Log.m */; };
 		01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */; };
 		01BD62091CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD62071CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m */; };
 		01BD620A1CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BD62081CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib */; };
@@ -118,6 +130,27 @@
 		0194F7161D018997002DBB35 /* LiDManCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDManCell.m; sourceTree = "<group>"; };
 		0194F7171D018997002DBB35 /* LiDManCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiDManCell.xib; sourceTree = "<group>"; };
 		01A2AB1C1CFD1888007B48DB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		01AEBF881D05193E00B6705C /* HotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDetailViewController.h; sourceTree = "<group>"; };
+		01AEBF891D05193E00B6705C /* HotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDetailViewController.m; sourceTree = "<group>"; };
+		01AEBF8A1D05193E00B6705C /* HotDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotDetailViewController.xib; sourceTree = "<group>"; };
+		01AEBF931D051F3F00B6705C /* HotDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDetailModel.h; sourceTree = "<group>"; };
+		01AEBF941D051F3F00B6705C /* HotDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDetailModel.m; sourceTree = "<group>"; };
+		01AEBF961D05264A00B6705C /* skuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = skuModel.h; path = ../skuModel.h; sourceTree = "<group>"; };
+		01AEBF971D05264A00B6705C /* skuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = skuModel.m; path = ../skuModel.m; sourceTree = "<group>"; };
+		01AEBF9A1D054F6700B6705C /* skuColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skuColor.h; sourceTree = "<group>"; };
+		01AEBF9B1D054F6700B6705C /* skuColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skuColor.m; sourceTree = "<group>"; };
+		01AEBF9D1D05506700B6705C /* skuSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skuSize.h; sourceTree = "<group>"; };
+		01AEBF9E1D05506700B6705C /* skuSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = skuSize.m; sourceTree = "<group>"; };
+		01AEBFA91D055AE900B6705C /* SkuColorSizeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkuColorSizeList.h; sourceTree = "<group>"; };
+		01AEBFAA1D055AE900B6705C /* SkuColorSizeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkuColorSizeList.m; sourceTree = "<group>"; };
+		01AEBFAD1D055BE900B6705C /* recommendProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = recommendProduct.h; sourceTree = "<group>"; };
+		01AEBFAE1D055BE900B6705C /* recommendProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = recommendProduct.m; sourceTree = "<group>"; };
+		01AEBFB31D05682D00B6705C /* HotDetailHeaderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDetailHeaderVC.h; sourceTree = "<group>"; };
+		01AEBFB41D05682D00B6705C /* HotDetailHeaderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDetailHeaderVC.m; sourceTree = "<group>"; };
+		01AEBFB51D05682D00B6705C /* HotDetailHeaderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotDetailHeaderVC.xib; sourceTree = "<group>"; };
+		01AEBFB81D06757700B6705C /* UIView+LiDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LiDExtension.h"; sourceTree = "<group>"; };
+		01AEBFB91D06757700B6705C /* UIView+LiDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LiDExtension.m"; sourceTree = "<group>"; };
+		01AEBFBB1D06759700B6705C /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "Common/Controllers/Foundation+Log.m"; sourceTree = "<group>"; };
 		01BCD9141CFC45C400383A16 /* LiDMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDMenuTableViewController.h; sourceTree = "<group>"; };
 		01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMenuTableViewController.m; sourceTree = "<group>"; };
 		01BD62061CFFC1A900B3CA87 /* LiDHotCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDHotCollectionViewCell.h; sourceTree = "<group>"; };
@@ -225,6 +258,30 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		01AEBF991D054EAF00B6705C /* Skus */ = {
+			isa = PBXGroup;
+			children = (
+				01AEBF961D05264A00B6705C /* skuModel.h */,
+				01AEBF971D05264A00B6705C /* skuModel.m */,
+				01AEBF9A1D054F6700B6705C /* skuColor.h */,
+				01AEBF9B1D054F6700B6705C /* skuColor.m */,
+				01AEBF9D1D05506700B6705C /* skuSize.h */,
+				01AEBF9E1D05506700B6705C /* skuSize.m */,
+				01AEBFA91D055AE900B6705C /* SkuColorSizeList.h */,
+				01AEBFAA1D055AE900B6705C /* SkuColorSizeList.m */,
+			);
+			path = Skus;
+			sourceTree = "<group>";
+		};
+		01AEBFAC1D055BCE00B6705C /* HotDetail */ = {
+			isa = PBXGroup;
+			children = (
+				01AEBFAD1D055BE900B6705C /* recommendProduct.h */,
+				01AEBFAE1D055BE900B6705C /* recommendProduct.m */,
+			);
+			path = HotDetail;
+			sourceTree = "<group>";
+		};
 		01C43CA51CFDCAFC0088D1D8 /* macros */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +343,7 @@
 		01DED1011CFBE77600CF60C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01AEBFBB1D06759700B6705C /* Foundation+Log.m */,
 				01DED1121CFBE77600CF60C0 /* Info.plist */,
 				01DED10D1CFBE77600CF60C0 /* Assets.xcassets */,
 				01DED1021CFBE77600CF60C0 /* main.m */,
@@ -338,6 +396,8 @@
 		01DED13F1CFBE86100CF60C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01AEBFAC1D055BCE00B6705C /* HotDetail */,
+				01AEBF991D054EAF00B6705C /* Skus */,
 				014B8D5B1D0008F90089B55A /* MechantModel.h */,
 				014B8D5C1D0008F90089B55A /* MechantModel.m */,
 				014B8D5E1D000A0D0089B55A /* ProductModel.h */,
@@ -359,6 +419,8 @@
 		01DED1401CFBE86100CF60C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01AEBFB81D06757700B6705C /* UIView+LiDExtension.h */,
+				01AEBFB91D06757700B6705C /* UIView+LiDExtension.m */,
 				01DED1581CFBEB2000CF60C0 /* LiDBaseViewController.h */,
 				01DED1591CFBEB2000CF60C0 /* LiDBaseViewController.m */,
 			);
@@ -509,6 +571,12 @@
 				0144C8501CFD7B0800AA06CF /* LiDHotViewController.m */,
 				011DE8611CFE729B00C175D4 /* LiDBrandViewController.h */,
 				011DE8621CFE729B00C175D4 /* LiDBrandViewController.m */,
+				01AEBF881D05193E00B6705C /* HotDetailViewController.h */,
+				01AEBF891D05193E00B6705C /* HotDetailViewController.m */,
+				01AEBF8A1D05193E00B6705C /* HotDetailViewController.xib */,
+				01AEBFB31D05682D00B6705C /* HotDetailHeaderVC.h */,
+				01AEBFB41D05682D00B6705C /* HotDetailHeaderVC.m */,
+				01AEBFB51D05682D00B6705C /* HotDetailHeaderVC.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -522,6 +590,8 @@
 				014B8D711D0018FA0089B55A /* LiDHotProductModel.m */,
 				0194F70C1D0172DC002DBB35 /* LiDManModel.h */,
 				0194F70D1D0172DC002DBB35 /* LiDManModel.m */,
+				01AEBF931D051F3F00B6705C /* HotDetailModel.h */,
+				01AEBF941D051F3F00B6705C /* HotDetailModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -682,6 +752,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AEBFB71D05682D00B6705C /* HotDetailHeaderVC.xib in Resources */,
 				010ABDDE1D02934500E17F35 /* LoginViewController.xib in Resources */,
 				011DE86A1CFE749000C175D4 /* LiDBrandViewCell.xib in Resources */,
 				0194F70B1D01615B002DBB35 /* LiDManViewCell.xib in Resources */,
@@ -690,6 +761,7 @@
 				01DED10E1CFBE77600CF60C0 /* Assets.xcassets in Resources */,
 				0194F7191D018997002DBB35 /* LiDManCell.xib in Resources */,
 				01DED10C1CFBE77600CF60C0 /* Main.storyboard in Resources */,
+				01AEBF8C1D05193E00B6705C /* HotDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,7 +910,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				010ABDDD1D02934500E17F35 /* LoginViewController.m in Sources */,
+				01AEBF951D051F3F00B6705C /* HotDetailModel.m in Sources */,
 				0194F7181D018997002DBB35 /* LiDManCell.m in Sources */,
+				01AEBFB61D05682D00B6705C /* HotDetailHeaderVC.m in Sources */,
+				01AEBF9C1D054F6700B6705C /* skuColor.m in Sources */,
 				011DE8641CFE729B00C175D4 /* LiDBrandViewController.m in Sources */,
 				014B8D661D000E530089B55A /* CategoryInfo.m in Sources */,
 				014B8D6C1D000F1E0089B55A /* ParentCategory.m in Sources */,
@@ -846,13 +921,18 @@
 				01DED1601CFBEF1200CF60C0 /* LiDNavigationController.m in Sources */,
 				014B8D721D0018FA0089B55A /* LiDHotProductModel.m in Sources */,
 				014B8D631D000D070089B55A /* CategoryModel.m in Sources */,
+				01AEBF981D05264A00B6705C /* skuModel.m in Sources */,
 				01C43CB21CFDCB210088D1D8 /* UIView+ZJFrame.m in Sources */,
+				01AEBFBA1D06757700B6705C /* UIView+LiDExtension.m in Sources */,
+				01AEBF9F1D05506700B6705C /* skuSize.m in Sources */,
 				014B8D5D1D0008F90089B55A /* MechantModel.m in Sources */,
 				01DED1091CFBE77600CF60C0 /* ViewController.m in Sources */,
 				0144C8511CFD7B0800AA06CF /* LiDHotViewController.m in Sources */,
 				01C43CB31CFDCB210088D1D8 /* ZJContentView.m in Sources */,
 				0194F7141D01740B002DBB35 /* postObjectInfo.m in Sources */,
+				01AEBFBC1D06759700B6705C /* Foundation+Log.m in Sources */,
 				01DED1691CFBEF8700CF60C0 /* LiDMineViewController.m in Sources */,
+				01AEBFAF1D055BE900B6705C /* recommendProduct.m in Sources */,
 				01DED1571CFBEB0800CF60C0 /* LiDLaunchView.m in Sources */,
 				01DED16C1CFBEF9000CF60C0 /* LiDNewsViewController.m in Sources */,
 				01DED1631CFBEF7100CF60C0 /* LiDExploreViewController.m in Sources */,
@@ -866,6 +946,7 @@
 				01C43CB71CFDCB210088D1D8 /* ZJSegmentStyle.m in Sources */,
 				0194F70E1D0172DC002DBB35 /* LiDManModel.m in Sources */,
 				01DED1661CFBEF7E00CF60C0 /* LiDLiveViewController.m in Sources */,
+				01AEBFAB1D055AE900B6705C /* SkuColorSizeList.m in Sources */,
 				0194F70A1D01615B002DBB35 /* LiDManViewCell.m in Sources */,
 				011DE86D1CFE78E400C175D4 /* LiDBrandModel.m in Sources */,
 				01BD62091CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m in Sources */,
@@ -874,6 +955,7 @@
 				01DED1031CFBE77600CF60C0 /* main.m in Sources */,
 				01DED15D1CFBEC2D00CF60C0 /* LiDTabBarController.m in Sources */,
 				014B8D601D000A0D0089B55A /* ProductModel.m in Sources */,
+				01AEBF8B1D05193E00B6705C /* HotDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

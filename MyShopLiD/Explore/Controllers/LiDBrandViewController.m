@@ -61,6 +61,13 @@ NSString * const brandIdentifier=@"brandCell";
     [self setupViews];
     [self firstLoad];
 }
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    [self.httpManager.operationQueue cancelAllOperations];
+}
+
 #pragma mark -第一次加载
 -(void)firstLoad{
 

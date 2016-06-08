@@ -70,6 +70,12 @@ NSString * const shortCellIdentifier=@"shortCell";
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    [self.httpManager.operationQueue cancelAllOperations];
+}
+
 -(void)firstLoad{
 
     self.categoryID=1;
@@ -87,6 +93,7 @@ NSString * const shortCellIdentifier=@"shortCell";
     //代理
     [self.manTable setDelegate:self];
     [self.manTable setDataSource:self];
+    self.manTable.estimatedRowHeight = 400;
     [self.manTable setRowHeight:UITableViewAutomaticDimension];
     
     
@@ -111,6 +118,8 @@ NSString * const shortCellIdentifier=@"shortCell";
         }
         
     }];
+    
+    self.manTable.tableFooterView=[[UIView alloc]init];
     
     
     /**
@@ -165,6 +174,16 @@ NSString * const shortCellIdentifier=@"shortCell";
         NSLog(@"%@",error.localizedDescription);
     }];
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (indexPath.row) {
+//        return  UITableViewAutomaticDimension;
+//    }
+//    else {
+//        return 400;
+//    }
+//}
 
 
 

@@ -69,6 +69,12 @@ NSString * const ladyShort=@"shortCell";
     [self firstLoad];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    [self.httpManager.operationQueue cancelAllOperations];
+}
+
 -(void)firstLoad{
     
     self.categoryID=2;

@@ -59,7 +59,7 @@
 
 #import <CDRTranslucentSideBar.h>
 #import <UIImageView+WebCache.h>
-#import <AFHTTPSessionManager.h>
+#import <AFNetworking.h>
 #import <YYModel.h>
 #import <Masonry.h>
 #import <MJRefresh.h>
@@ -72,7 +72,11 @@
 #define SCWidth [[UIApplication sharedApplication] keyWindow].bounds.size.width
 #define SCHeight [[UIApplication sharedApplication] keyWindow].bounds.size.height
 
-
+/**
+ *  本地存储相关
+ */
+#define kAccessTokenKey @"AccessToken"
+#define kUserIDKey @"UID"
 
 
 //#define UMAppKey @"575e24e3e0f55adcfb000624"

@@ -26,12 +26,26 @@
     [self.window setRootViewController:launch];
     [self.window makeKeyAndVisible];
     
-    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK enableDebugMode:NO];
     [WeiboSDK registerApp:WBAppKey];
     
     
     return YES;
 }
+-(void)didReceiveWeiboResponse:(WBBaseResponse *)response{
+
+    if ([response isKindOfClass:WBAuthorizeResponse.class]) {
+        
+        NSString *accessToken=[(WBAuthorizeResponse *)response accessToken];
+        NSString *userID=[(WBAuthorizeResponse *)response userID];
+        [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:kAccessTokenKey];
+        [[NSUserDefaults standardUserDefaults] setObject:userID forKey:kUserIDKey];
+    }else if([response isKindOfClass:WBSendMessageToWeiboResponse.class]){
+        
+        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%ld",(long)response.statusCode]];
+    }
+}
+
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
 

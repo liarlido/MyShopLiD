@@ -10,9 +10,9 @@
 #import "HotDetailHeaderVC.h"
 #import "HotDetailModel.h"
 //#import "LiDToolbarController.h"
-#import <objc/runtime.h>
+#import "WeiboSDK.h"
 
-@interface HotDetailViewController ()<UIScrollViewDelegate,UIActionSheetDelegate,UIWebViewDelegate>
+@interface HotDetailViewController ()<UIScrollViewDelegate,UIActionSheetDelegate>
 
 @property(nonatomic,strong)UIWebView *webView;
 
@@ -323,12 +323,10 @@
 -(void)requestData{
 
     __weak typeof(self) weakSelf=self;
+    NSLog(@"url:\n%@",[NSString stringWithFormat:WHOOLALA,self.proDtailApi]);
     [self.httpManager GET:[NSString stringWithFormat:WHOOLALA,self.proDtailApi] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         weakSelf.model=[HotDetailModel yy_modelWithJSON:responseObject];
-        
-        NSLog(@"productID=========%@",weakSelf.model.product.product_id);
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf setupViews];
         });
@@ -440,29 +438,63 @@
 }
 
 #pragma mark -actionSheet选中事件
+//微博分享
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    
 
     switch (buttonIndex) {
         case 0:
         {
-            self.webView=[[UIWebView alloc]initWithFrame:self.view.bounds];
-            [self.view addSubview:self.webView];
-            self.webView.delegate=self;
-            // 拼接授权URL
-            NSString * authUrl = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@", WB_API_OAuth_request_Url, WBAppKey, WBRedirectURL];
-            // 加载网页
-            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:authUrl]];
-            [self.webView loadRequest:request];
+            NSString *accessToken=[[NSUserDefaults standardUserDefaults]objectForKey:kAccessTokenKey];
+            if (accessToken.length>0&&![accessToken isEqualToString:@""]) {
+                [self sendMessageWithAccessToken];
+            }else{
+            
+                [self getAuthorise];
+                __weak typeof(self) weakSelf=self;
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [weakSelf sendMessageWithAccessToken];
+                });
+            }
             break;
         }
         default:
             break;
     }
 }
+//获取授权
+-(void)getAuthorise{
 
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    request.redirectURI = WBRedirectURL;
+    request.scope = @"all";
+    request.userInfo = nil;
+    [WeiboSDK sendRequest:request];
+}
+
+//发送微博
+-(void)sendMessageWithAccessToken{
+    
+    NSString *accessToken=[[NSUserDefaults standardUserDefaults]objectForKey:kAccessTokenKey];
+    NSString *text=[NSString stringWithFormat:@"%@\n%@",self.model.product.name,self.model.product.long_description];
+    WBMessageObject *message = [WBMessageObject message];
+    message.text=text;
+    WBAuthorizeRequest *request=[WBAuthorizeRequest request];
+    request.redirectURI=WBRedirectURL;
+    request.scope=@"all";
+    
+    WBSendMessageToWeiboRequest *sendRequest=[WBSendMessageToWeiboRequest requestWithMessage:message authInfo:request access_token:accessToken];
+    sendRequest.userInfo=nil;
+    [WeiboSDK sendRequest:sendRequest];
+}
+
+-(void)messageToSend{
+
+    
+}
 
 -(void)dealloc{
-
 
     [self.httpManager.operationQueue cancelAllOperations];
 }

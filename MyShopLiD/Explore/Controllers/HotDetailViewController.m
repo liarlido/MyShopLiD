@@ -9,8 +9,13 @@
 #import "HotDetailViewController.h"
 #import "HotDetailHeaderVC.h"
 #import "HotDetailModel.h"
+//#import "LiDToolbarController.h"
+#import <objc/runtime.h>
 
-@interface HotDetailViewController ()<UIScrollViewDelegate>
+@interface HotDetailViewController ()<UIScrollViewDelegate,UIActionSheetDelegate,UIWebViewDelegate>
+
+@property(nonatomic,strong)UIWebView *webView;
+
 /** 全局滚动视图 */
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -88,7 +93,6 @@
 }
 
 #pragma mark -页面布局
-
 -(void)setupViews{
     
     //最开始四个子视图均隐藏
@@ -103,9 +107,9 @@
     [self setImages];
     [self setupDetailViews];
     
+    [self setToolBar];
+    
 }
-
-
 -(void)setupTopScrollView{
     if (self.model.introimages.count>0) {
         for (int i=0; i<self.model.introimages.count; i++) {
@@ -164,6 +168,50 @@
     
 }
 
+
+#pragma mark -底部工具条
+-(void)setToolBar{
+
+    UIToolbar *toolBar=[[UIToolbar alloc]initWithFrame:CGRectMake(0, self.view.height-44, SCWidth, 44)];
+    [self.view addSubview:toolBar];
+    
+    [toolBar setTintColor:[UIColor grayColor]];
+    [toolBar setBarTintColor:[UIColor whiteColor]];
+    
+    
+    UIBarButtonItem *item1=[[UIBarButtonItem alloc]initWithTitle:[NSString stringWithFormat:@"%ld%%用户喜欢TA",(long)self.model.product.likeRatio] style:UIBarButtonItemStylePlain target:self action:nil];
+    [item1 setWidth:SCWidth/2.0f];
+    
+    //立即购买按钮
+    UIButton *buyBtn=[[UIButton alloc]init];
+    [buyBtn setBackgroundColor:[UIColor lightGrayColor]];
+    [buyBtn setTitle:@"立即购买" forState:UIControlStateNormal];
+    [buyBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    buyBtn.width=SCWidth/4.0f;
+    buyBtn.height=toolBar.height;
+    [buyBtn addTarget:self action:@selector(buyBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    //加入购物车按钮
+    UIButton *addShopCar=[[UIButton alloc]init];
+    [addShopCar setBackgroundColor:[UIColor blackColor]];
+    [addShopCar setTitle:@"加入购物车" forState:UIControlStateNormal];
+    [addShopCar setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [addShopCar addTarget:self action:@selector(addShopCarClick) forControlEvents:UIControlEventTouchUpInside];
+    addShopCar.width=SCWidth/4.0f;
+    addShopCar.height=toolBar.height;
+    
+    UIBarButtonItem *buyItem=[[UIBarButtonItem alloc]initWithCustomView:buyBtn];
+    UIBarButtonItem *addShopItem=[[UIBarButtonItem alloc]initWithCustomView:addShopCar];
+    
+    UIBarButtonItem *placeholder=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    
+    
+    
+    [toolBar setItems:@[placeholder,item1,buyItem,placeholder,addShopItem,placeholder]];
+   
+    
+    
+}
 #pragma mark -设置每个分类中图片的位置
 -(void)setImages{
 
@@ -290,6 +338,7 @@
     }];
 }
 
+#pragma mark -<UIScrollViewDelegate>
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
     self.pageController.currentPage=scrollView.contentOffset.x/SCWidth;
@@ -302,8 +351,12 @@
 
 #pragma mark -导航条设置
 -(void)setupNavigation{
+    
+    
+    
 
-    UIButton *backBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 42, 42)];
+    UIButton *backBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 32, 32)];
+    [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
     [backBtn setImage:[UIImage imageNamed:@"back-white~iphone"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:backBtn];
@@ -314,50 +367,98 @@
     [self.navigationController.navigationBar setBackgroundImage:navImg.image forBarMetrics:UIBarMetricsCompact];
     
     //购物车与分享按钮
-    UIButton *shopcarBtn=[[UIButton alloc]initWithFrame:CGRectMake( 0, 0, 42, 42)];
+    UIButton *shopcarBtn=[[UIButton alloc]initWithFrame:CGRectMake( 0, 0, 32, 32)];
     [shopcarBtn setImage:[UIImage imageNamed:@"shopping~iphone"] forState:UIControlStateNormal];
     [shopcarBtn addTarget:self action:@selector(shopcarClick) forControlEvents:UIControlEventTouchUpInside];
+    [shopcarBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -10)];
     
-    UIButton *shareBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 42, 42)];
-    [shareBtn setImage:[UIImage imageNamed:@"share_1"] forState:UIControlStateNormal];
+    
+    UIButton *shareBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 32, 32)];
+    [shareBtn setImage:[UIImage imageNamed:@"share_1~iphone"] forState:UIControlStateNormal];
     [shareBtn addTarget:self action:@selector(shareBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [shareBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -10)];
     
     UIBarButtonItem *shopItem=[[UIBarButtonItem alloc]initWithCustomView:shopcarBtn];
     UIBarButtonItem *shareItem=[[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     
-    UIButton *collectBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 42, 42)];
+    UIButton *collectBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 32, 32)];
     if (self.model.product.likestatus) {
-        [collectBtn setImage:[UIImage imageNamed:@"star"] forState:UIControlStateNormal];
+        [collectBtn setImage:[UIImage imageNamed:@"star~iphone"] forState:UIControlStateNormal];
     }else{
-        [collectBtn setImage:[UIImage imageNamed:@"star_1"] forState:UIControlStateNormal];
+        [collectBtn setImage:[UIImage imageNamed:@"star_1~iphone"] forState:UIControlStateNormal];
     }
     [collectBtn addTarget:self action:@selector(collectClick:) forControlEvents:UIControlEventTouchUpInside];
+    [collectBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -10)];
     UIBarButtonItem *collectItem=[[UIBarButtonItem alloc]initWithCustomView:collectBtn];
     
     
-    [self.navigationItem setRightBarButtonItems:@[shopItem,shareItem,collectItem]];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    negativeSpacer.width = 0;
+    
+    
+    [self.navigationItem setRightBarButtonItems:@[negativeSpacer,shopItem,negativeSpacer,shareItem,negativeSpacer,collectItem]];
 }
 
+#pragma mark -收藏按钮事件
 -(void)collectClick:(UIButton *)button{
 
     NSLog(@"%s",__func__);
 }
 
+#pragma mark -分享按钮事件
 -(void)shareBtnClick{
 
-    NSLog(@"%s",__func__);
+    UIActionSheet *actionSheet=[[UIActionSheet alloc]initWithTitle:@"请选择您要分享到哪个平台:" delegate:self cancelButtonTitle:@"cancle" destructiveButtonTitle:@"Weibo" otherButtonTitles:nil];
+    [actionSheet setActionSheetStyle:UIActionSheetStyleAutomatic];
+    [actionSheet showInView:self.view];
 }
 
+#pragma mark -购物车按钮事件
 -(void)shopcarClick{
 
     NSLog(@"%s",__func__);
 }
 
+#pragma mark -返回按钮事件
 -(void)backAction{
 
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark -立即购买按钮事件
+-(void)buyBtnClick{
+    
+    NSLog(@"%s",__func__);
+}
+
+#pragma mark -加入购物车按钮事件
+-(void)addShopCarClick{
+
+    NSLog(@"%s",__func__);
+}
+
+#pragma mark -actionSheet选中事件
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    switch (buttonIndex) {
+        case 0:
+        {
+            self.webView=[[UIWebView alloc]initWithFrame:self.view.bounds];
+            [self.view addSubview:self.webView];
+            self.webView.delegate=self;
+            // 拼接授权URL
+            NSString * authUrl = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@", WB_API_OAuth_request_Url, WBAppKey, WBRedirectURL];
+            // 加载网页
+            NSURLRequest * request = [NSURLRequest requestWithURL:[NSURL URLWithString:authUrl]];
+            [self.webView loadRequest:request];
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 
 -(void)dealloc{

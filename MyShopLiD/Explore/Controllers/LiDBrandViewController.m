@@ -10,7 +10,7 @@
 #import "LiDBrandViewCell.h"
 #import "LiDBrandModel.h"
 
-@interface LiDBrandViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+@interface LiDBrandViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UIScrollViewDelegate>
 
 /** 表格视图 */
 @property(nonatomic,strong)UITableView *brandTable;
@@ -68,6 +68,12 @@ NSString * const brandIdentifier=@"brandCell";
     [self.httpManager.operationQueue cancelAllOperations];
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    
+    [super viewDidDisappear:animated];
+    [self.httpManager.operationQueue cancelAllOperations];
+}
+
 #pragma mark -第一次加载
 -(void)firstLoad{
 
@@ -88,7 +94,9 @@ NSString * const brandIdentifier=@"brandCell";
     //代理
     [self.brandTable setDelegate:self];
     [self.brandTable setDataSource:self];
-    [self.brandTable setRowHeight:180];
+    [self.brandTable setRowHeight:200];
+    [self.brandTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
     
     __weak typeof(self) weakSelf=self;
     [self.brandTable mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -153,7 +161,10 @@ NSString * const brandIdentifier=@"brandCell";
         
         cell.model=self.dataArray[indexPath.row];
     }
+    cell.clipsToBounds=YES;
+    cell.contentView.clipsToBounds=YES;
     
+    [cell cellOffset];
     return cell;
 }
 
@@ -183,6 +194,12 @@ NSString * const brandIdentifier=@"brandCell";
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         self.currentPage--;
         [SVProgressHUD showErrorWithStatus:@"加载失败,请重试"];
+        if ([weakSelf.brandTable.mj_header isRefreshing]) {
+            [weakSelf.brandTable.mj_header endRefreshing];
+        }
+        if ([weakSelf.brandTable.mj_footer isRefreshing]) {
+            [weakSelf.brandTable.mj_footer endRefreshing];
+        }
     }];
 
 }
@@ -217,6 +234,20 @@ NSString * const brandIdentifier=@"brandCell";
         [self.searchBar setShowsCancelButton:NO];
     }
 }
+
+
+#pragma mark -<UIScrollViewDelegate>
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 获取可以见到的 cell,让图片在cell坐标改变的时候偏移
+    NSArray<LiDBrandViewCell *> *array = [self.brandTable visibleCells];
+    [array enumerateObjectsUsingBlock:^(LiDBrandViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        [obj cellOffset];
+    }];
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

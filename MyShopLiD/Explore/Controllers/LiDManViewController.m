@@ -93,7 +93,7 @@ NSString * const shortCellIdentifier=@"shortCell";
     //代理
     [self.manTable setDelegate:self];
     [self.manTable setDataSource:self];
-    self.manTable.estimatedRowHeight = 400;
+    self.manTable.estimatedRowHeight = 450;
     [self.manTable setRowHeight:UITableViewAutomaticDimension];
     
     
@@ -196,12 +196,10 @@ NSString * const shortCellIdentifier=@"shortCell";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     postObjectInfo *model=self.dataArray[indexPath.row];
-    
     if (model.productsInfo.count>0) {
         model.cellHeight=450;
         LiDManViewCell *cell=[tableView dequeueReusableCellWithIdentifier:manIdentifier forIndexPath:indexPath];
         cell.model=model;
-        
         return cell;
     }else{
         model.cellHeight=200;
@@ -248,6 +246,20 @@ NSString * const shortCellIdentifier=@"shortCell";
         [self.searchBar setShowsCancelButton:NO];
     }
 }
+
+
+//#pragma mark -<UIScrollViewDelegate>
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    // 获取可以见到的 cell,让图片在cell坐标改变的时候偏移
+//    
+//    NSArray<LiDManViewCell *> *array = [self.manTable visibleCells];
+//    [array enumerateObjectsUsingBlock:^(LiDManViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        
+////        [obj cellOffset];
+//    }];
+//    
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,8 +8,9 @@
 
 #import "AppDelegate.h"
 #import "LiDLaunchView.h"
+#import "WeiboSDK.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WeiboSDKDelegate>
 
 @end
 
@@ -19,15 +20,29 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     
-    /** 麻痹的 */
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor blackColor]];
     LiDLaunchView *launch=[[LiDLaunchView alloc]init];
     [self.window setRootViewController:launch];
     [self.window makeKeyAndVisible];
     
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:WBAppKey];
+    
+    
     return YES;
 }
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+
+    return [WeiboSDK handleOpenURL:url delegate:self];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

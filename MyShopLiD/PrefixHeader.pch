@@ -10,6 +10,32 @@
 #define PrefixHeader_pch
 
 
+/** AppKeys */
+#define WBAppKey @"2861595724"
+
+// App Secret
+#define WBAppSecret    @"5f111f1a4149d9fbe56800317a1a686b"
+
+/**
+ *  网络和授权相关
+ */
+
+// 请求用户授权Token
+#define WB_API_OAuth_request_Url @"https://api.weibo.com/oauth2/authorize"
+
+// 获取授权过的Access Token
+#define WB_API_OAuth_get_accessToken @"https://api.weibo.com/oauth2/access_token"
+
+// 回调地址
+#define WBRedirectURL @"http://www.jianshu.com/users/c6e433a1e87e/latest_articles"
+
+// 发送微博
+#define WBAPIupdate @"https://api.weibo.com/2/statuses/update.json"
+
+/** 
+ *  数据请求相关
+ */
+
 /** 总前缀 */
 #define WHOOLALA @"http://www.whoolala.com%@"
 
@@ -45,6 +71,11 @@
 
 #define SCWidth [[UIApplication sharedApplication] keyWindow].bounds.size.width
 #define SCHeight [[UIApplication sharedApplication] keyWindow].bounds.size.height
+
+
+
+
+//#define UMAppKey @"575e24e3e0f55adcfb000624"
 
 
 #endif /* PrefixHeader_pch */

@@ -67,6 +67,12 @@ NSString *const cellIdentifier=@"collectionCell";
     [self.httpManager.operationQueue cancelAllOperations];
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+
+    [super viewDidDisappear:animated];
+    [self.httpManager.operationQueue cancelAllOperations];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
@@ -157,13 +163,16 @@ NSString *const cellIdentifier=@"collectionCell";
     
     HotDetailViewController *hotDetail=[[HotDetailViewController alloc]init];
     hotDetail.proDtailApi=model.productDetailAPI;
+   
+    [hotDetail setHidesBottomBarWhenPushed:YES];
+    [hotDetail.navigationController setToolbarHidden:NO];
     [self.navigationController pushViewController:hotDetail animated:YES];
     
     
+//    [self.navigationController setToolbarHidden:YES animated:YES];
     
     
 }
-
 
 #pragma mark -cell尺寸
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -207,6 +216,7 @@ NSString *const cellIdentifier=@"collectionCell";
             [weakSelf.collectionView.mj_footer endRefreshing];
             weakSelf.currentPage--;
         }
+        NSLog(@"%@",error.localizedDescription);
         [SVProgressHUD showErrorWithStatus:@"对不起,加载失败"];
     }];
 }

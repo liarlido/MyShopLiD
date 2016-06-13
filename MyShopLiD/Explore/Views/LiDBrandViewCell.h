@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 @class LiDBrandModel;
 @interface LiDBrandViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *brandImage;
+@property (strong, nonatomic) UIImageView *brandImage;
 @property (weak, nonatomic) IBOutlet UILabel *brandName;
 /** 品牌模型 */
 @property(nonatomic,strong)LiDBrandModel *model;
 
+/** 偏移单元格 */
+- (void)cellOffset;
 
 @end

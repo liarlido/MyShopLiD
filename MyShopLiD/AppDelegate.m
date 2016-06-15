@@ -26,12 +26,15 @@
     [self.window setRootViewController:launch];
     [self.window makeKeyAndVisible];
     
-    [WeiboSDK enableDebugMode:NO];
+    [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:WBAppKey];
     
     
     return YES;
 }
+
+
+//当收到微博客户端的响应时的回调函数
 -(void)didReceiveWeiboResponse:(WBBaseResponse *)response{
 
     if ([response isKindOfClass:WBAuthorizeResponse.class]) {
@@ -42,10 +45,21 @@
         [[NSUserDefaults standardUserDefaults] setObject:userID forKey:kUserIDKey];
     }else if([response isKindOfClass:WBSendMessageToWeiboResponse.class]){
         
-        [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%ld",(long)response.statusCode]];
+        if (response.statusCode==0) {
+            [SVProgressHUD showSuccessWithStatus:@"分享成功!"];
+        }else{
+        
+            [SVProgressHUD showErrorWithStatus:@"抱歉,分享失败~"];
+        }
+        
+        
     }
 }
 
+-(void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+
+    
+}
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
 

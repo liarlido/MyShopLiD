@@ -58,7 +58,7 @@
     // 5、距离差 / 2倍父视图高度
     CGFloat offsetDig =  cellOffsetY / self.superview.frame.size.height*2 ;
     // 6、计算偏移 kScreenHeight * 0.5 为图片视图的高度
-    CGFloat offset    =  -offsetDig * (SCHeight * 0.5-250) / 2;
+    CGFloat offset    =  -offsetDig * (SCHeight * 0.5-300) / 2;
     
 //    CGFloat offset=10;
     

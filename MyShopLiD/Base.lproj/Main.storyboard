@@ -42,7 +42,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biaoti_1" translatesAutoresizingMaskIntoConstraints="NO" id="wHh-oK-ix3">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biaoti_1" translatesAutoresizingMaskIntoConstraints="NO" id="wHh-oK-ix3">
                                                     <rect key="frame" x="10" y="25" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="9qJ-3R-NLR"/>
@@ -81,23 +81,16 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9n-WO-iFG">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9n-WO-iFG">
                                                     <rect key="frame" x="70" y="25" width="52" height="28"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="点击登录">
                                                         <color key="titleColor" red="0.83295157070000003" green="0.63310646869999998" blue="0.69344163839999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <state key="highlighted" title="点击登录">
-                                                        <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                        <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                            <integer key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
-                                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="loginAction:" destination="9GR-vM-mWX" eventType="touchUpInside" id="mPo-mn-eAU"/>
                                                     </connections>
@@ -563,6 +556,12 @@
                             <outlet property="delegate" destination="9GR-vM-mWX" id="cLd-rD-vPu"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="collectionLabel" destination="TwC-il-p5V" id="xlB-00-ebX"/>
+                        <outlet property="favouriteLabel" destination="rWJ-fS-6ks" id="lui-8b-X7S"/>
+                        <outlet property="logoImgView" destination="wHh-oK-ix3" id="hTU-nj-I6C"/>
+                        <outlet property="userNameBtn" destination="u9n-WO-iFG" id="mgv-bk-s1P"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LA-F4-igt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

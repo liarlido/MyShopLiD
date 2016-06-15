@@ -36,7 +36,6 @@
 		01663DB61D0E442400B10018 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01663DB51D0E442400B10018 /* CoreGraphics.framework */; };
 		01663DB81D0E442E00B10018 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01663DB71D0E442E00B10018 /* libz.tbd */; };
 		01663DBA1D0E443900B10018 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01663DB91D0E443900B10018 /* libsqlite3.tbd */; };
-		01663DBD1D0E524D00B10018 /* weiboShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01663DBC1D0E524D00B10018 /* weiboShareViewController.m */; };
 		017C5D3C1D0CFEC5003D5964 /* LiDToobar.m in Sources */ = {isa = PBXBuildFile; fileRef = 017C5D3B1D0CFEC5003D5964 /* LiDToobar.m */; };
 		0194F70A1D01615B002DBB35 /* LiDManViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7081D01615B002DBB35 /* LiDManViewCell.m */; };
 		0194F70B1D01615B002DBB35 /* LiDManViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0194F7091D01615B002DBB35 /* LiDManViewCell.xib */; };
@@ -81,6 +80,9 @@
 		01DED1661CFBEF7E00CF60C0 /* LiDLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DED1651CFBEF7E00CF60C0 /* LiDLiveViewController.m */; };
 		01DED1691CFBEF8700CF60C0 /* LiDMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DED1681CFBEF8700CF60C0 /* LiDMineViewController.m */; };
 		01DED16C1CFBEF9000CF60C0 /* LiDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DED16B1CFBEF9000CF60C0 /* LiDNewsViewController.m */; };
+		01F04F5B1D110590009278A2 /* LiDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F04F5A1D110590009278A2 /* LiDUser.m */; };
+		01F04F5E1D11059E009278A2 /* LiDUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F04F5D1D11059E009278A2 /* LiDUserInfo.m */; };
+		01F04F611D1105AA009278A2 /* LoginUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F04F601D1105AA009278A2 /* LoginUserInfo.m */; };
 		0212FF16985282D6B1A660BF /* libPods-MyShopLiD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CCADE3A9597D1CF3188553E /* libPods-MyShopLiD.a */; };
 		4EC3F9E850E10021EEF3EF8F /* libPods-MyShopLiDUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE48A6B55142E87A0F463CB7 /* libPods-MyShopLiDUITests.a */; };
 		55B09E78AFC7DD08995FBF25 /* libPods-MyShopLiDTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA52654506927BD19B28F23C /* libPods-MyShopLiDTests.a */; };
@@ -158,8 +160,6 @@
 		01663DB51D0E442400B10018 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		01663DB71D0E442E00B10018 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		01663DB91D0E443900B10018 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		01663DBB1D0E524D00B10018 /* weiboShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weiboShareViewController.h; sourceTree = "<group>"; };
-		01663DBC1D0E524D00B10018 /* weiboShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weiboShareViewController.m; sourceTree = "<group>"; };
 		017C5D3A1D0CFEC5003D5964 /* LiDToobar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDToobar.h; sourceTree = "<group>"; };
 		017C5D3B1D0CFEC5003D5964 /* LiDToobar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDToobar.m; sourceTree = "<group>"; };
 		0194F7071D01615B002DBB35 /* LiDManViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDManViewCell.h; sourceTree = "<group>"; };
@@ -243,6 +243,12 @@
 		01DED1681CFBEF8700CF60C0 /* LiDMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMineViewController.m; sourceTree = "<group>"; };
 		01DED16A1CFBEF9000CF60C0 /* LiDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDNewsViewController.h; sourceTree = "<group>"; };
 		01DED16B1CFBEF9000CF60C0 /* LiDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDNewsViewController.m; sourceTree = "<group>"; };
+		01F04F591D110590009278A2 /* LiDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDUser.h; sourceTree = "<group>"; };
+		01F04F5A1D110590009278A2 /* LiDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDUser.m; sourceTree = "<group>"; };
+		01F04F5C1D11059E009278A2 /* LiDUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDUserInfo.h; sourceTree = "<group>"; };
+		01F04F5D1D11059E009278A2 /* LiDUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDUserInfo.m; sourceTree = "<group>"; };
+		01F04F5F1D1105AA009278A2 /* LoginUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUserInfo.h; sourceTree = "<group>"; };
+		01F04F601D1105AA009278A2 /* LoginUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUserInfo.m; sourceTree = "<group>"; };
 		280BAE35B84701D6F7F604EF /* Pods-MyShopLiDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyShopLiDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyShopLiDTests/Pods-MyShopLiDTests.release.xcconfig"; sourceTree = "<group>"; };
 		4205C7C9932615CDA8C89BB2 /* Pods-MyShopLiDUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyShopLiDUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyShopLiDUITests/Pods-MyShopLiDUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5CCADE3A9597D1CF3188553E /* libPods-MyShopLiD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyShopLiD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -297,6 +303,7 @@
 		010ABDD81D02930100E17F35 /* Logins */ = {
 			isa = PBXGroup;
 			children = (
+				01F04F581D110569009278A2 /* Models */,
 				010ABDD91D02931500E17F35 /* controllers */,
 			);
 			path = Logins;
@@ -663,8 +670,6 @@
 				01AEBFB31D05682D00B6705C /* HotDetailHeaderVC.h */,
 				01AEBFB41D05682D00B6705C /* HotDetailHeaderVC.m */,
 				01AEBFB51D05682D00B6705C /* HotDetailHeaderVC.xib */,
-				01663DBB1D0E524D00B10018 /* weiboShareViewController.h */,
-				01663DBC1D0E524D00B10018 /* weiboShareViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -701,6 +706,19 @@
 				0194F7171D018997002DBB35 /* LiDManCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		01F04F581D110569009278A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01F04F591D110590009278A2 /* LiDUser.h */,
+				01F04F5A1D110590009278A2 /* LiDUser.m */,
+				01F04F5C1D11059E009278A2 /* LiDUserInfo.h */,
+				01F04F5D1D11059E009278A2 /* LiDUserInfo.m */,
+				01F04F5F1D1105AA009278A2 /* LoginUserInfo.h */,
+				01F04F601D1105AA009278A2 /* LoginUserInfo.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		72C9BCC118589B275424E113 /* Pods */ = {
@@ -1010,6 +1028,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F04F5B1D110590009278A2 /* LiDUser.m in Sources */,
 				010ABDDD1D02934500E17F35 /* LoginViewController.m in Sources */,
 				01AEBF951D051F3F00B6705C /* HotDetailModel.m in Sources */,
 				0194F7181D018997002DBB35 /* LiDManCell.m in Sources */,
@@ -1017,6 +1036,7 @@
 				01AEBF9C1D054F6700B6705C /* skuColor.m in Sources */,
 				011DE8641CFE729B00C175D4 /* LiDBrandViewController.m in Sources */,
 				014B8D661D000E530089B55A /* CategoryInfo.m in Sources */,
+				01F04F5E1D11059E009278A2 /* LiDUserInfo.m in Sources */,
 				014B8D6C1D000F1E0089B55A /* ParentCategory.m in Sources */,
 				01DED15A1CFBEB2000CF60C0 /* LiDBaseViewController.m in Sources */,
 				01DED1601CFBEF1200CF60C0 /* LiDNavigationController.m in Sources */,
@@ -1039,7 +1059,6 @@
 				01DED16C1CFBEF9000CF60C0 /* LiDNewsViewController.m in Sources */,
 				01DED1631CFBEF7100CF60C0 /* LiDExploreViewController.m in Sources */,
 				0144C84B1CFD7AF100AA06CF /* LiDLadyViewController.m in Sources */,
-				01663DBD1D0E524D00B10018 /* weiboShareViewController.m in Sources */,
 				01DED1061CFBE77600CF60C0 /* AppDelegate.m in Sources */,
 				011DE8691CFE749000C175D4 /* LiDBrandViewCell.m in Sources */,
 				01C43CB51CFDCB210088D1D8 /* ZJScrollPageView.m in Sources */,
@@ -1057,6 +1076,7 @@
 				01C43CB41CFDCB210088D1D8 /* ZJCustomLabel.m in Sources */,
 				01DED1031CFBE77600CF60C0 /* main.m in Sources */,
 				01DED15D1CFBEC2D00CF60C0 /* LiDTabBarController.m in Sources */,
+				01F04F611D1105AA009278A2 /* LoginUserInfo.m in Sources */,
 				014B8D601D000A0D0089B55A /* ProductModel.m in Sources */,
 				01AEBF8B1D05193E00B6705C /* HotDetailViewController.m in Sources */,
 			);

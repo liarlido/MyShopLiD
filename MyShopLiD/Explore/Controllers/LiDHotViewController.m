@@ -166,6 +166,7 @@ NSString *const cellIdentifier=@"collectionCell";
    
     [hotDetail setHidesBottomBarWhenPushed:YES];
     [hotDetail.navigationController setToolbarHidden:NO];
+    hotDetail.navigationController.hidesBarsWhenVerticallyCompact=YES;
     [self.navigationController pushViewController:hotDetail animated:YES];
     
     

@@ -402,6 +402,7 @@
 #pragma mark -收藏按钮事件
 -(void)collectClick:(UIButton *)button{
 
+    
     NSLog(@"%s",__func__);
 }
 
@@ -463,7 +464,7 @@
             break;
     }
 }
-//获取授权
+//获取授权信息
 -(void)getAuthorise{
 
     WBAuthorizeRequest *request = [WBAuthorizeRequest request];
@@ -477,9 +478,33 @@
 -(void)sendMessageWithAccessToken{
     
     NSString *accessToken=[[NSUserDefaults standardUserDefaults]objectForKey:kAccessTokenKey];
-    NSString *text=[NSString stringWithFormat:@"%@\n%@",self.model.product.name,self.model.product.long_description];
     WBMessageObject *message = [WBMessageObject message];
+    
+    NSString *text=self.model.product.name;
+    //纯文本内容分享
     message.text=text;
+    
+    /* 消息中图片内容和多媒体内容不能共存
+    //带图片内容分享
+    NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:self.model.product.imgGroup.x400]];
+    WBImageObject *imageData=[WBImageObject object];
+    [imageData setImageData:data];
+    message.imageObject=imageData;
+    */
+    
+    
+    //带网页内容分享
+    WBWebpageObject *webpage = [WBWebpageObject object];
+    webpage.objectID = @"identifier1";
+    //显示网页的标题
+    webpage.title=self.model.product.name;
+    //描述
+    webpage.description=[NSString stringWithFormat:@"%@的详情介绍",self.model.product.name];
+    //缩略图
+    webpage.thumbnailData=[NSData dataWithContentsOfURL:[NSURL URLWithString:self.model.product.imgGroup.x66]];
+    webpage.webpageUrl=self.model.product.imgGroup.x400;
+    
+    message.mediaObject=webpage;
     WBAuthorizeRequest *request=[WBAuthorizeRequest request];
     request.redirectURI=WBRedirectURL;
     request.scope=@"all";
@@ -487,11 +512,6 @@
     WBSendMessageToWeiboRequest *sendRequest=[WBSendMessageToWeiboRequest requestWithMessage:message authInfo:request access_token:accessToken];
     sendRequest.userInfo=nil;
     [WeiboSDK sendRequest:sendRequest];
-}
-
--(void)messageToSend{
-
-    
 }
 
 -(void)dealloc{

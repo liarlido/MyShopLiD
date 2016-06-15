@@ -17,6 +17,9 @@
 
 @interface LiDExploreViewController ()<CDRTranslucentSideBarDelegate>
 
+/** 是否接收到消息中心发出的消息 */
+@property(nonatomic,assign)BOOL receiveNotification;
+
 @property (nonatomic, strong) CDRTranslucentSideBar *slideMenu;
 /** 标题数组 */
 @property(nonatomic,strong)NSArray *titleArray;
@@ -70,11 +73,25 @@
 
 #pragma mark 生命周期
 - (void)viewDidLoad {
+    self.receiveNotification=NO;
     [super viewDidLoad];
     [self setLeftMenu];
     [self setupNavigation];
     [self addPageView];
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateUserInfo:) name:@"loginStatusChanged" object:nil];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    if (self.receiveNotification) {
+        
+    }
+}
+
+-(void)updateUserInfo:(NSNotification *)notification{
     
+    self.receiveNotification=YES;
 }
 
 -(void)setLeftMenu{

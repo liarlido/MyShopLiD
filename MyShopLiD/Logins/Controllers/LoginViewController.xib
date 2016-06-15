@@ -47,18 +47,21 @@
                         <constraint firstItem="3B8-3R-pMx" firstAttribute="leading" secondItem="2Z5-4c-aaQ" secondAttribute="leading" constant="10" id="rsn-P5-dDK"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKO-Ta-Jdg" userLabel="infoView">
-                    <rect key="frame" x="600" y="197" width="440" height="200"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKO-Ta-Jdg" userLabel="infoView">
+                    <rect key="frame" x="0.0" y="197" width="440" height="200"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-Sw-Hx0">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="cg1-Sw-Hx0">
                             <rect key="frame" x="0.0" y="40" width="440" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ruz-PA-qDV">
                             <rect key="frame" x="0.0" y="120" width="440" height="34"/>
                             <color key="backgroundColor" red="0.2163302496" green="0.55913461539999998" blue="0.44650734669999997" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="立即登录"/>
+                            <connections>
+                                <action selector="loginClick:" destination="-1" eventType="touchUpInside" id="HQu-Kp-SQ3"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Un-jW-eAE">
                             <rect key="frame" x="372" y="80" width="68" height="30"/>
@@ -80,7 +83,7 @@
                                 </mask>
                             </variation>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AQy-35-fgA">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入手机号码" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="AQy-35-fgA">
                             <rect key="frame" x="60" y="0.0" width="380" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -203,12 +206,12 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="f7i-N0-Aru"/>
                     <exclude reference="PZM-fM-H1l"/>
                     <exclude reference="QeD-bN-YEz"/>
                     <exclude reference="ss3-Km-Rph"/>
                     <exclude reference="yzc-CR-KKM"/>
                     <exclude reference="zbO-K0-yF0"/>
-                    <exclude reference="f7i-N0-Aru"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="384" y="255"/>

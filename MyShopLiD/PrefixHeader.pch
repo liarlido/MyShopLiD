@@ -39,6 +39,12 @@
 /** 总前缀 */
 #define WHOOLALA @"http://www.whoolala.com%@"
 
+/** 登录接口 */
+#define ILogin @"http://www.whoolala.com/j_spring_security_check?client=Black_i_CN_3"
+/** 登录是否成功接口 */
+#define ILogined @"http://www.whoolala.com/account/ajaxLoginSuccessInfo"
+/** 用户信息接口 */
+#define IUserInfo @"http://www.whoolala.com/accounts/showProfileByURL?return_format=json"
 /** 品牌页面 */
 /** 图片前缀 */
 #define BrandIMGPrefix @"http://whoolala-images-cn.oss-cn-shanghai.aliyuncs.com/x%@"
@@ -51,9 +57,11 @@
 #define IHot @"http://www.whoolala.com/shoppingMall/showHotProducts?directPage=%@&lang=zh_CN&return_format=json"
 /** 最热详情接口 */
 #define IHotDetail @"http://www.whoolala.com/shoppingMallAPI/product?pid=%@"
-
 /** 分类商品接口 */
 #define IManAndLady @"http://www.whoolala.com/postsAPI/showPostsByCategory?categoryID=%ld&directPage=%@&return_format=json"
+/** 收藏接口*/
+#define ICollection @"http://www.whoolala.com/shoppingMall/likeProducts?id=%@"
+
 
 
 

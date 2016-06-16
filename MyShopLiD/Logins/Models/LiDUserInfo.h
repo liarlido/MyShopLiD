@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class uUrlinfo,uImggroup;
-@interface LiDUserInfo : NSObject
+@interface LiDUserInfo : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *birthday;
 
@@ -62,13 +62,13 @@
 @property (nonatomic, copy) NSString *qq_number;
 
 @end
-@interface uUrlinfo : NSObject
+@interface uUrlinfo : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *profile;
 
 @end
 
-@interface uImggroup : NSObject
+@interface uImggroup : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *avatar;
 

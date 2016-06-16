@@ -9,10 +9,13 @@
 #import "HotDetailViewController.h"
 #import "HotDetailHeaderVC.h"
 #import "HotDetailModel.h"
-//#import "LiDToolbarController.h"
+#import "LoginUserInfo.h"
 #import "WeiboSDK.h"
 
-@interface HotDetailViewController ()<UIScrollViewDelegate,UIActionSheetDelegate>
+@interface HotDetailViewController ()<UIScrollViewDelegate,UIActionSheetDelegate>{
+
+    UIButton *_collectBtn;
+}
 
 @property(nonatomic,strong)UIWebView *webView;
 
@@ -50,6 +53,8 @@
 @property (weak, nonatomic) IBOutlet UIView *designView;
 /** 照片宽高比 */
 @property(nonatomic,assign)CGFloat imgHeight;
+/** 已登录用户 */
+@property(nonatomic,strong)LoginUserInfo *loginUser;
 
 @property (weak, nonatomic) IBOutlet UILabel *proNameLabel;
 
@@ -83,10 +88,19 @@
     return _httpManager;
 }
 
+-(LoginUserInfo *)loginUser{
+
+    if (!_loginUser) {
+        _loginUser=[NSKeyedUnarchiver unarchiveObjectWithFile:[DocPath stringByAppendingPathComponent:@"loginUser"]];
+    }
+    return _loginUser;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupNavigation];
     self.imgHeight=SCWidth/(2/3.0f);
+    [self setupNavigation];
     [self requestData];
     
     
@@ -94,6 +108,8 @@
 
 #pragma mark -页面布局
 -(void)setupViews{
+    
+    [self setupCollectionBtn];
     
     //最开始四个子视图均隐藏
     self.sizeView.hidden=YES;
@@ -106,7 +122,6 @@
     [self setupTopScrollView];
     [self setImages];
     [self setupDetailViews];
-    
     [self setToolBar];
     
 }
@@ -158,16 +173,24 @@
     
     self.typeLabel.text=[[self.model.product.categoryInfo firstObject] category].name;
     self.proNameLabel.text=self.model.product.name;
-    self.priceLabel.text=[NSString stringWithFormat:@"￥%ld",self.model.product.lowest_price];
+    self.priceLabel.text=[NSString stringWithFormat:@"￥%ld",(long)self.model.product.lowest_price];
     self.likeLabel.text=[NSString stringWithFormat:@"%ld%%用户喜欢这个产品",(long)self.model.product.likeRatio];
     
     [self.mechantImageView sd_setImageWithURL:[NSURL URLWithString:self.model.merchantinfo.merchant.imgGroup.avatar] placeholderImage:[UIImage imageNamed:@"biaoti_1~iphone"]];
     self.mechantNameLabel.text=self.model.merchantinfo.merchant.name;
-    self.mechantDescLabel.text=[NSString stringWithFormat:@"商品数量:%ld,商品销量:%ld",self.model.merchantinfo.merchant.sales_amount,self.model.merchantinfo.merchant.sales_volume];
+    self.mechantDescLabel.text=[NSString stringWithFormat:@"商品数量:%ld,商品销量:%ld",(long)self.model.merchantinfo.merchant.sales_amount,(long)self.model.merchantinfo.merchant.sales_volume];
     self.detailView.hidden=NO;
     
 }
 
+-(void)setupCollectionBtn{
+
+    if (self.model.product.likestatus) {
+        [_collectBtn setImage:[UIImage imageNamed:@"star~iphone"] forState:UIControlStateNormal];
+    }else{
+        [_collectBtn setImage:[UIImage imageNamed:@"star_1~iphone"] forState:UIControlStateNormal];
+    }
+}
 
 #pragma mark -底部工具条
 -(void)setToolBar{
@@ -329,6 +352,7 @@
         weakSelf.model=[HotDetailModel yy_modelWithJSON:responseObject];
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf setupViews];
+            [weakSelf setupCollectionBtn];
         });
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
@@ -349,9 +373,6 @@
 
 #pragma mark -导航条设置
 -(void)setupNavigation{
-    
-    
-    
 
     UIButton *backBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 32, 32)];
     [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
@@ -379,32 +400,61 @@
     UIBarButtonItem *shopItem=[[UIBarButtonItem alloc]initWithCustomView:shopcarBtn];
     UIBarButtonItem *shareItem=[[UIBarButtonItem alloc] initWithCustomView:shareBtn];
     
-    UIButton *collectBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 32, 32)];
+    //收藏按钮
+    _collectBtn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 32, 32)];
+
     if (self.model.product.likestatus) {
-        [collectBtn setImage:[UIImage imageNamed:@"star~iphone"] forState:UIControlStateNormal];
+        [_collectBtn setImage:[UIImage imageNamed:@"star~iphone"] forState:UIControlStateNormal];
     }else{
-        [collectBtn setImage:[UIImage imageNamed:@"star_1~iphone"] forState:UIControlStateNormal];
+        [_collectBtn setImage:[UIImage imageNamed:@"star_1~iphone"] forState:UIControlStateNormal];
     }
-    [collectBtn addTarget:self action:@selector(collectClick:) forControlEvents:UIControlEventTouchUpInside];
-    [collectBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -10)];
-    UIBarButtonItem *collectItem=[[UIBarButtonItem alloc]initWithCustomView:collectBtn];
+    [_collectBtn addTarget:self action:@selector(collectClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_collectBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -10)];
+    UIBarButtonItem *collectItem=[[UIBarButtonItem alloc]initWithCustomView:_collectBtn];
     
     
-    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
-                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                       target:nil action:nil];
-    negativeSpacer.width = 0;
-    
-    
-    [self.navigationItem setRightBarButtonItems:@[negativeSpacer,shopItem,negativeSpacer,shareItem,negativeSpacer,collectItem]];
+    [self.navigationItem setRightBarButtonItems:@[shopItem,shareItem,collectItem]];
 }
 
 #pragma mark -收藏按钮事件
 -(void)collectClick:(UIButton *)button{
 
+    LoginUserInfo *loginUser=[NSKeyedUnarchiver unarchiveObjectWithFile:[DocPath stringByAppendingPathComponent:@"loginUser"]];
+    if (loginUser.user.nickname!=nil) {
+        __weak typeof(self) weakSelf=self;
+        NSMutableDictionary *prarams=[NSMutableDictionary dictionary];
+        
+        prarams[@"id"]=self.proId;
+        [self.httpManager POST:[NSString stringWithFormat:ICollection,self.proId] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@",responseObject);
+            NSNumber *number=responseObject[@"likestatus"];
+            BOOL likeStatus=NO;
+            if ( [number isEqual: @0]) {
+                likeStatus=NO;
+            }else{
+                likeStatus=YES;
+            }
+            weakSelf.model.product.likestatus=likeStatus;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf setupCollectionBtn];
+            });
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@",error.localizedDescription);
+        }];
+    }else{
     
-    NSLog(@"%s",__func__);
+        [SVProgressHUD showErrorWithStatus:@"请先登录!"];
+    }
+    
+    
 }
+
+//#pragma mark -更新收藏状态
+//-(void)updateLikeStatus{
+//
+//    self.navigationController
+//}
 
 #pragma mark -分享按钮事件
 -(void)shareBtnClick{

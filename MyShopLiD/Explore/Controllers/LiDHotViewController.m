@@ -163,16 +163,13 @@ NSString *const cellIdentifier=@"collectionCell";
     
     HotDetailViewController *hotDetail=[[HotDetailViewController alloc]init];
     hotDetail.proDtailApi=model.productDetailAPI;
-   
+
+    hotDetail.proId=[NSString stringWithFormat:@"%ld",model.product.proid];
+    
     [hotDetail setHidesBottomBarWhenPushed:YES];
     [hotDetail.navigationController setToolbarHidden:NO];
     hotDetail.navigationController.hidesBarsWhenVerticallyCompact=YES;
     [self.navigationController pushViewController:hotDetail animated:YES];
-    
-    
-//    [self.navigationController setToolbarHidden:YES animated:YES];
-    
-    
 }
 
 #pragma mark -cell尺寸

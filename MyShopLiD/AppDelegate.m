@@ -10,24 +10,26 @@
 #import "LiDLaunchView.h"
 #import "WeiboSDK.h"
 
+
 @interface AppDelegate ()<WeiboSDKDelegate>
+
+
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
+
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor blackColor]];
     LiDLaunchView *launch=[[LiDLaunchView alloc]init];
     [self.window setRootViewController:launch];
-    [self.window makeKeyAndVisible];
+    
     
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:WBAppKey];
+    [self.window makeKeyAndVisible];
     
     
     return YES;

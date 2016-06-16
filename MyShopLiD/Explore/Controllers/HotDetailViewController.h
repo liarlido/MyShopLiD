@@ -12,5 +12,7 @@
 
 @property(nonatomic,copy)NSString *proDtailApi;
 
+@property(nonatomic,copy)NSString  *proId;
+
 
 @end

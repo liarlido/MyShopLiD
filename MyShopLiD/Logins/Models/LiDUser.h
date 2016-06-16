@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LiDUser : NSObject
+@interface LiDUser : NSObject<NSCoding>
 
 
 @property (nonatomic, copy) NSString *uid;

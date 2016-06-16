@@ -44,7 +44,7 @@
     self.typeLabel.text=[model.product.categoryInfo lastObject].category.name;
     self.goodsDesc.text=model.product.name;
     self.priceLabel.text=[NSString stringWithFormat:@"￥%.2ld",(long)model.product.lowest_price];
-    self.percentLabel.text=[NSString stringWithFormat:@"%ld%%",model.product.likeRatio];
+    self.percentLabel.text=[NSString stringWithFormat:@"%ld%%",(long)model.product.likeRatio];
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:model.merchantinfo.merchant.imgGroup.avatar] placeholderImage:[UIImage imageNamed:@"biaoti_1"]];
     self.shopNameLabel.text=model.merchantinfo.merchant.name;
     self.shopDescLabel.text=model.merchantinfo.merchant.merchant_signature.length>0?model.merchantinfo.merchant.merchant_signature:@"";

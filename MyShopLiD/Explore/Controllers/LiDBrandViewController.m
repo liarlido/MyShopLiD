@@ -170,7 +170,7 @@ NSString * const brandIdentifier=@"brandCell";
 
 #pragma mark -请求数据
 -(void)requestBrandWithDirectPage:(NSInteger) page{
-    NSString *curPage=[NSString stringWithFormat:@"%ld",self.currentPage];
+    NSString *curPage=[NSString stringWithFormat:@"%ld",(long)self.currentPage];
     __weak typeof(self) weakSelf=self;
     [self.httpManager GET:[NSString stringWithFormat:IBrand,curPage] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if([weakSelf.brandTable.mj_header isRefreshing]){

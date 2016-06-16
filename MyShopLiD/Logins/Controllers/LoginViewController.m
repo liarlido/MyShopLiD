@@ -135,7 +135,7 @@
 }
 - (IBAction)cancleClick:(UIButton *)sender {
     
-    [self dismissViewControllerAnimated:self completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 

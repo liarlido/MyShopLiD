@@ -13,19 +13,18 @@
 #import "LiDManViewController.h"
 #import "LiDHotViewController.h"
 #import "LiDBrandViewController.h"
+#import "LoginUserInfo.h"
 
 
 @interface LiDExploreViewController ()<CDRTranslucentSideBarDelegate>
 
-/** 是否接收到消息中心发出的消息 */
-@property(nonatomic,assign)BOOL receiveNotification;
 
 @property (nonatomic, strong) CDRTranslucentSideBar *slideMenu;
 /** 标题数组 */
 @property(nonatomic,strong)NSArray *titleArray;
 /** 控制器数组 */
 @property(nonatomic,strong)NSMutableArray *controllerArray;
-
+@property(nonatomic,strong)AFHTTPSessionManager *httpManager;
 
 @end
 
@@ -71,28 +70,49 @@
     return _controllerArray;
 }
 
+-(AFHTTPSessionManager *)httpManager{
+    
+    if (!_httpManager) {
+        _httpManager=[AFHTTPSessionManager manager];
+        _httpManager.responseSerializer=[AFHTTPResponseSerializer serializer];
+        _httpManager.responseSerializer.acceptableContentTypes=[_httpManager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    }
+    return _httpManager;
+}
+
 #pragma mark 生命周期
 - (void)viewDidLoad {
-    self.receiveNotification=NO;
     [super viewDidLoad];
+    [self getLoginUserInfo];
     [self setLeftMenu];
     [self setupNavigation];
     [self addPageView];
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateUserInfo:) name:@"loginStatusChanged" object:nil];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-
-    [super viewWillAppear:animated];
-    if (self.receiveNotification) {
-        
-    }
-}
-
--(void)updateUserInfo:(NSNotification *)notification{
+#pragma mark -登录用户信息
+-(void)getLoginUserInfo{
     
-    self.receiveNotification=YES;
+    LoginUserInfo *loginUser=[NSKeyedUnarchiver unarchiveObjectWithFile:[DocPath stringByAppendingPathComponent:@"loginUser"]];
+    if (loginUser.user.nickname==nil||loginUser.userinfo.imgGroup.avatar==nil||[loginUser.user.nickname isEqualToString:@""]||[loginUser.userinfo.imgGroup.avatar isEqualToString:@""]) {
+        return;
+    }
+    
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    params[@"j_username"]=@"8618380447953";
+    params[@"j_password"]=@"123456";
+    params[@"region_code"]=@"86";
+    
+    [self.httpManager POST:ILogin parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"signedIn" object:nil];
+        NSLog(@"notification sent");
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"error:\n%@",error.localizedDescription);
+    }];
 }
+
+
 
 -(void)setLeftMenu{
 

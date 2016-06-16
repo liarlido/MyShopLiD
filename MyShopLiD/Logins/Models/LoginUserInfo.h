@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LiDUser.h"
 #import "LiDUserInfo.h"
-@interface LoginUserInfo : NSObject
+@interface LoginUserInfo : NSObject<NSCoding>
 
 /** 用户 */
 @property(nonatomic,strong)LiDUser *user;

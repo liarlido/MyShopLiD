@@ -56,6 +56,7 @@
 		01AEBFBA1D06757700B6705C /* UIView+LiDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFB91D06757700B6705C /* UIView+LiDExtension.m */; };
 		01AEBFBC1D06759700B6705C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFBB1D06759700B6705C /* Foundation+Log.m */; };
 		01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */; };
+		01BD3B231D1189E80037038E /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3B221D1189E80037038E /* NSArray+Extension.m */; };
 		01BD62091CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD62071CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m */; };
 		01BD620A1CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BD62081CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib */; };
 		01C43CB21CFDCB210088D1D8 /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C43CA71CFDCB210088D1D8 /* UIView+ZJFrame.m */; };
@@ -196,6 +197,8 @@
 		01AEBFBB1D06759700B6705C /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Foundation+Log.m"; path = "Common/Controllers/Foundation+Log.m"; sourceTree = "<group>"; };
 		01BCD9141CFC45C400383A16 /* LiDMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDMenuTableViewController.h; sourceTree = "<group>"; };
 		01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMenuTableViewController.m; sourceTree = "<group>"; };
+		01BD3B211D1189E80037038E /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		01BD3B221D1189E80037038E /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		01BD62061CFFC1A900B3CA87 /* LiDHotCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDHotCollectionViewCell.h; sourceTree = "<group>"; };
 		01BD62071CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDHotCollectionViewCell.m; sourceTree = "<group>"; };
 		01BD62081CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiDHotCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 				01DED10D1CFBE77600CF60C0 /* Assets.xcassets */,
 				01DED1021CFBE77600CF60C0 /* main.m */,
 				01A2AB1C1CFD1888007B48DB /* PrefixHeader.pch */,
+				01BD3B211D1189E80037038E /* NSArray+Extension.h */,
+				01BD3B221D1189E80037038E /* NSArray+Extension.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1046,6 +1051,7 @@
 				01C43CB21CFDCB210088D1D8 /* UIView+ZJFrame.m in Sources */,
 				01AEBFBA1D06757700B6705C /* UIView+LiDExtension.m in Sources */,
 				01AEBF9F1D05506700B6705C /* skuSize.m in Sources */,
+				01BD3B231D1189E80037038E /* NSArray+Extension.m in Sources */,
 				014B8D5D1D0008F90089B55A /* MechantModel.m in Sources */,
 				01DED1091CFBE77600CF60C0 /* ViewController.m in Sources */,
 				0144C8511CFD7B0800AA06CF /* LiDHotViewController.m in Sources */,

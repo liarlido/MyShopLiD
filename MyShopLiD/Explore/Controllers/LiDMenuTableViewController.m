@@ -35,12 +35,19 @@
     
     return _httpManager;
 }
+-(void)awakeFromNib{
+
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateUserInfo:) name:@"loginStatusChanged" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadLoginUser) name:@"signedIn" object:nil];
     
 }
+
 
 
 -(void)updateUserInfo:(NSNotification *)notification{
@@ -52,10 +59,8 @@
 
     [self.userNameBtn setTitle:userInfo.user.nickname forState:UIControlStateNormal];
     self.userNameBtn.enabled=NO;
-    self.favouriteLabel.text=[NSString stringWithFormat:@"%ld",userInfo.pickedProductNumber];
-    self.collectionLabel.text=[NSString stringWithFormat:@"%ld",userInfo.favorProductNumber];
-    
-    NSLog(@"%@",userInfo.userinfo.imgGroup.avatar);
+    self.favouriteLabel.text=[NSString stringWithFormat:@"%ld",(long)userInfo.pickedProductNumber];
+    self.collectionLabel.text=[NSString stringWithFormat:@"%ld",(long)userInfo.favorProductNumber];
     [self.logoImgView sd_setImageWithURL:[NSURL URLWithString:userInfo.userinfo.imgGroup.avatar] placeholderImage:[UIImage imageNamed:@"biaoti_1~iphone"]];
 }
 
@@ -66,6 +71,8 @@
         
         LoginUserInfo *loginUser=[LoginUserInfo yy_modelWithJSON:responseObject];
         [weakSelf updateViews:loginUser];
+        
+        
         //存到本地
         [weakSelf writeUserInfoToLocal:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -73,11 +80,38 @@
     }];
 }
 
--(void)writeUserInfoToLocal:(NSDictionary *)responseObject{
+#pragma mark -已登录,直接加载用户信息
+-(void)loadLoginUser{
 
+    LoginUserInfo *loginUser=[NSKeyedUnarchiver unarchiveObjectWithFile:[DocPath stringByAppendingPathComponent:@"loginUser"]];
+    if (loginUser.user.nickname==nil||loginUser.userinfo.imgGroup.avatar==nil||[loginUser.user.nickname isEqualToString:@""]||[loginUser.userinfo.imgGroup.avatar isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"读取用户信息失败"];
+        return;
+    }
+    
+    [self.userNameBtn setTitle:loginUser.user.nickname forState:UIControlStateNormal];
+    self.userNameBtn.enabled=NO;
+    self.favouriteLabel.text=[NSString stringWithFormat:@"%ld",(long)loginUser.pickedProductNumber];
+    self.collectionLabel.text=[NSString stringWithFormat:@"%ld",(long)loginUser.favorProductNumber];
+    [self.logoImgView sd_setImageWithURL:[NSURL URLWithString:loginUser.userinfo.imgGroup.avatar] placeholderImage:[UIImage imageNamed:@"biaoti_1~iphone"]];
     
     
-//    responseObject writeToFile:<#(nonnull NSString *)#> atomically:<#(BOOL)#>
+}
+
+-(void)writeUserInfoToLocal:(NSDictionary *)responseObject{
+    
+    LoginUserInfo *loginUser=[LoginUserInfo yy_modelWithJSON:responseObject];
+    if ([NSKeyedArchiver archiveRootObject:loginUser toFile:[DocPath stringByAppendingPathComponent:@"loginUser"]]) {
+        //解归档测试
+//        LoginUserInfo *user1=[NSKeyedUnarchiver unarchiveObjectWithFile:[DocPath stringByAppendingPathComponent:@"loginUser"]];
+        
+    }
+    
+}
+
+-(void)dealloc{
+
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {

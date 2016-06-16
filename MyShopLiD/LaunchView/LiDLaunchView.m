@@ -31,9 +31,9 @@
     [self.view addSubview:imageView];
     [imageView setCenter:CGPointMake(self.view.center.x, self.view.center.y)];
     
-        [UIView animateWithDuration:3 animations:^{
+        [UIView animateWithDuration:2.0 animations:^{
             
-           [imageView setTransform:CGAffineTransformMakeScale(0.2, 0.2)];
+           [imageView setTransform:CGAffineTransformMakeScale(0.5, 0.5)];
         } completion:^(BOOL finished) {
             
             [imageView setTransform:CGAffineTransformMakeScale(2.0, 2.0)];

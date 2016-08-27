@@ -10,7 +10,7 @@ target 'MyShopLiD' do
   pod 'Masonry'
   pod 'MJRefresh'
   pod 'SVProgressHUD'
-
+  pod 'MDCSwipeToChoose'
 
   target 'MyShopLiDTests' do
     inherit! :search_paths

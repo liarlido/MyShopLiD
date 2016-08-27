@@ -43,6 +43,9 @@
 		0194F7141D01740B002DBB35 /* postObjectInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7131D01740B002DBB35 /* postObjectInfo.m */; };
 		0194F7181D018997002DBB35 /* LiDManCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0194F7161D018997002DBB35 /* LiDManCell.m */; };
 		0194F7191D018997002DBB35 /* LiDManCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0194F7171D018997002DBB35 /* LiDManCell.xib */; };
+		019A24B01D12F24800756DA1 /* NewProductInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 019A24AF1D12F24800756DA1 /* NewProductInfo.m */; };
+		01A1CC8E1D6DA08C00E51768 /* LiDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A1CC8D1D6DA08C00E51768 /* LiDSettingViewController.m */; };
+		01A1CC911D6DA32D00E51768 /* LiDSettingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A1CC901D6DA32D00E51768 /* LiDSettingTableVC.m */; };
 		01AEBF8B1D05193E00B6705C /* HotDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBF891D05193E00B6705C /* HotDetailViewController.m */; };
 		01AEBF8C1D05193E00B6705C /* HotDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEBF8A1D05193E00B6705C /* HotDetailViewController.xib */; };
 		01AEBF951D051F3F00B6705C /* HotDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBF941D051F3F00B6705C /* HotDetailModel.m */; };
@@ -57,6 +60,8 @@
 		01AEBFBC1D06759700B6705C /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEBFBB1D06759700B6705C /* Foundation+Log.m */; };
 		01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */; };
 		01BD3B231D1189E80037038E /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3B221D1189E80037038E /* NSArray+Extension.m */; };
+		01BD3B271D1298F80037038E /* NewGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD3B251D1298F80037038E /* NewGoodsViewController.m */; };
+		01BD3B281D1298F80037038E /* NewGoodsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BD3B261D1298F80037038E /* NewGoodsViewController.xib */; };
 		01BD62091CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BD62071CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m */; };
 		01BD620A1CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BD62081CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib */; };
 		01C43CB21CFDCB210088D1D8 /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C43CA71CFDCB210088D1D8 /* UIView+ZJFrame.m */; };
@@ -173,6 +178,12 @@
 		0194F7151D018997002DBB35 /* LiDManCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDManCell.h; sourceTree = "<group>"; };
 		0194F7161D018997002DBB35 /* LiDManCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDManCell.m; sourceTree = "<group>"; };
 		0194F7171D018997002DBB35 /* LiDManCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiDManCell.xib; sourceTree = "<group>"; };
+		019A24AE1D12F24800756DA1 /* NewProductInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProductInfo.h; sourceTree = "<group>"; };
+		019A24AF1D12F24800756DA1 /* NewProductInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProductInfo.m; sourceTree = "<group>"; };
+		01A1CC8C1D6DA08C00E51768 /* LiDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDSettingViewController.h; sourceTree = "<group>"; };
+		01A1CC8D1D6DA08C00E51768 /* LiDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDSettingViewController.m; sourceTree = "<group>"; };
+		01A1CC8F1D6DA32D00E51768 /* LiDSettingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDSettingTableVC.h; sourceTree = "<group>"; };
+		01A1CC901D6DA32D00E51768 /* LiDSettingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDSettingTableVC.m; sourceTree = "<group>"; };
 		01A2AB1C1CFD1888007B48DB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		01AEBF881D05193E00B6705C /* HotDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDetailViewController.h; sourceTree = "<group>"; };
 		01AEBF891D05193E00B6705C /* HotDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDetailViewController.m; sourceTree = "<group>"; };
@@ -199,6 +210,9 @@
 		01BCD9151CFC45C400383A16 /* LiDMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDMenuTableViewController.m; sourceTree = "<group>"; };
 		01BD3B211D1189E80037038E /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
 		01BD3B221D1189E80037038E /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		01BD3B241D1298F80037038E /* NewGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGoodsViewController.h; sourceTree = "<group>"; };
+		01BD3B251D1298F80037038E /* NewGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGoodsViewController.m; sourceTree = "<group>"; };
+		01BD3B261D1298F80037038E /* NewGoodsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewGoodsViewController.xib; sourceTree = "<group>"; };
 		01BD62061CFFC1A900B3CA87 /* LiDHotCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiDHotCollectionViewCell.h; sourceTree = "<group>"; };
 		01BD62071CFFC1A900B3CA87 /* LiDHotCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiDHotCollectionViewCell.m; sourceTree = "<group>"; };
 		01BD62081CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiDHotCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -603,6 +617,10 @@
 			children = (
 				01DED1671CFBEF8700CF60C0 /* LiDMineViewController.h */,
 				01DED1681CFBEF8700CF60C0 /* LiDMineViewController.m */,
+				01A1CC8C1D6DA08C00E51768 /* LiDSettingViewController.h */,
+				01A1CC8D1D6DA08C00E51768 /* LiDSettingViewController.m */,
+				01A1CC8F1D6DA32D00E51768 /* LiDSettingTableVC.h */,
+				01A1CC901D6DA32D00E51768 /* LiDSettingTableVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -636,6 +654,9 @@
 			children = (
 				01DED16A1CFBEF9000CF60C0 /* LiDNewsViewController.h */,
 				01DED16B1CFBEF9000CF60C0 /* LiDNewsViewController.m */,
+				01BD3B241D1298F80037038E /* NewGoodsViewController.h */,
+				01BD3B251D1298F80037038E /* NewGoodsViewController.m */,
+				01BD3B261D1298F80037038E /* NewGoodsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -643,6 +664,8 @@
 		01DED1501CFBEA0B00CF60C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				019A24AE1D12F24800756DA1 /* NewProductInfo.h */,
+				019A24AF1D12F24800756DA1 /* NewProductInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -879,6 +902,7 @@
 				010ABDDE1D02934500E17F35 /* LoginViewController.xib in Resources */,
 				011DE86A1CFE749000C175D4 /* LiDBrandViewCell.xib in Resources */,
 				0194F70B1D01615B002DBB35 /* LiDManViewCell.xib in Resources */,
+				01BD3B281D1298F80037038E /* NewGoodsViewController.xib in Resources */,
 				01DED1111CFBE77600CF60C0 /* LaunchScreen.storyboard in Resources */,
 				01BD620A1CFFC1A900B3CA87 /* LiDHotCollectionViewCell.xib in Resources */,
 				01DED10E1CFBE77600CF60C0 /* Assets.xcassets in Resources */,
@@ -1046,6 +1070,7 @@
 				01DED15A1CFBEB2000CF60C0 /* LiDBaseViewController.m in Sources */,
 				01DED1601CFBEF1200CF60C0 /* LiDNavigationController.m in Sources */,
 				014B8D721D0018FA0089B55A /* LiDHotProductModel.m in Sources */,
+				01A1CC8E1D6DA08C00E51768 /* LiDSettingViewController.m in Sources */,
 				014B8D631D000D070089B55A /* CategoryModel.m in Sources */,
 				01AEBF981D05264A00B6705C /* skuModel.m in Sources */,
 				01C43CB21CFDCB210088D1D8 /* UIView+ZJFrame.m in Sources */,
@@ -1071,8 +1096,10 @@
 				014B8D6F1D0011490089B55A /* MechantInfo.m in Sources */,
 				01C43CB61CFDCB210088D1D8 /* ZJScrollSegmentView.m in Sources */,
 				01BCD9161CFC45C400383A16 /* LiDMenuTableViewController.m in Sources */,
+				019A24B01D12F24800756DA1 /* NewProductInfo.m in Sources */,
 				01C43CB71CFDCB210088D1D8 /* ZJSegmentStyle.m in Sources */,
 				0194F70E1D0172DC002DBB35 /* LiDManModel.m in Sources */,
+				01BD3B271D1298F80037038E /* NewGoodsViewController.m in Sources */,
 				01DED1661CFBEF7E00CF60C0 /* LiDLiveViewController.m in Sources */,
 				01AEBFAB1D055AE900B6705C /* SkuColorSizeList.m in Sources */,
 				0194F70A1D01615B002DBB35 /* LiDManViewCell.m in Sources */,
@@ -1084,6 +1111,7 @@
 				01DED15D1CFBEC2D00CF60C0 /* LiDTabBarController.m in Sources */,
 				01F04F611D1105AA009278A2 /* LoginUserInfo.m in Sources */,
 				014B8D601D000A0D0089B55A /* ProductModel.m in Sources */,
+				01A1CC911D6DA32D00E51768 /* LiDSettingTableVC.m in Sources */,
 				01AEBF8B1D05193E00B6705C /* HotDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

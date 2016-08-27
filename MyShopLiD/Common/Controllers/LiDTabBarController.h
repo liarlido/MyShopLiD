@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LiDTabBarController : UITabBarController
+@interface LiDTabBarController : UITabBarController<UITabBarControllerDelegate>
 
 @end

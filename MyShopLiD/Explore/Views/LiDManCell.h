@@ -11,4 +11,7 @@
 
 @interface LiDManCell : UITableViewCell
 @property(nonatomic,strong)postObjectInfo *model;
+/** 偏移单元格 */
+- (void)cellOffset;
+
 @end

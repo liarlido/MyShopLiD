@@ -38,7 +38,6 @@
 
 /** 总前缀 */
 #define WHOOLALA @"http://www.whoolala.com%@"
-
 /** 登录接口 */
 #define ILogin @"http://www.whoolala.com/j_spring_security_check?client=Black_i_CN_3"
 /** 登录是否成功接口 */
@@ -59,10 +58,15 @@
 #define IHotDetail @"http://www.whoolala.com/shoppingMallAPI/product?pid=%@"
 /** 分类商品接口 */
 #define IManAndLady @"http://www.whoolala.com/postsAPI/showPostsByCategory?categoryID=%ld&directPage=%@&return_format=json"
-/** 收藏接口*/
+/** 收藏接口 */
 #define ICollection @"http://www.whoolala.com/shoppingMall/likeProducts?id=%@"
-
-
+/** 新品页面 */
+/** 商品接口 */
+#define ITenderProducts @"http://www.whoolala.com/shops/showTinderProducts?is_first_open=1&lang=zh_CN"
+/** 收藏接口 */
+#define INewCollect @"http://www.whoolala.com/shops/addProduct"
+/** 取消接口 */
+#define INewCancle @"http://www.whoolala.com/shops/rejectProduct"
 
 
 #import <CDRTranslucentSideBar.h>

@@ -45,10 +45,17 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateUserInfo:) name:@"loginStatusChanged" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadLoginUser) name:@"signedIn" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadUserInfo) name:@"registed" object:nil];
 }
 
+-(void)reloadUserInfo{
 
+    [self.userNameBtn setTitle:@"点击登录" forState:UIControlStateNormal];
+    self.userNameBtn.enabled=YES;
+    self.favouriteLabel.text=@"0";
+    self.collectionLabel.text=@"0";
+    [self.logoImgView setImage:[UIImage imageNamed:@"biaotili~iphone"]];
+}
 
 -(void)updateUserInfo:(NSNotification *)notification{
 

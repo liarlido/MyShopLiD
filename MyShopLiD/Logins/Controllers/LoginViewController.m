@@ -53,8 +53,8 @@
 #pragma mark -登录按钮事件
 - (IBAction)loginClick:(UIButton *)sender {
     
-    NSString *txtUserName=self.txtPhoneNum.text;
-    NSString *txtPwd=self.txtPwd.text;
+//    NSString *txtUserName=self.txtPhoneNum.text;
+//    NSString *txtPwd=self.txtPwd.text;
 //    if (txtUserName.length==0||[txtUserName isEqualToString:@""]) {
 //        [SVProgressHUD showErrorWithStatus:@"用户名不能为空!"];
 //        return;
@@ -136,7 +136,6 @@
 - (IBAction)cancleClick:(UIButton *)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 /*

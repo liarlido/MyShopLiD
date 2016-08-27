@@ -118,8 +118,7 @@ NSString * const shortCellIdentifier=@"shortCell";
         }
         
     }];
-    
-    self.manTable.tableFooterView=[[UIView alloc]init];
+    [self.manTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     
     /**
@@ -248,17 +247,24 @@ NSString * const shortCellIdentifier=@"shortCell";
 }
 
 
-//#pragma mark -<UIScrollViewDelegate>
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    // 获取可以见到的 cell,让图片在cell坐标改变的时候偏移
-//    
-//    NSArray<LiDManViewCell *> *array = [self.manTable visibleCells];
-//    [array enumerateObjectsUsingBlock:^(LiDManViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        
-////        [obj cellOffset];
-//    }];
-//    
-//}
+#pragma mark -<UIScrollViewDelegate>
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 获取可以见到的 cell,让图片在cell坐标改变的时候偏移
+    
+    NSArray<UITableViewCell *> *array = [self.manTable visibleCells];
+    [array enumerateObjectsUsingBlock:^(UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        if ([obj isKindOfClass:[LiDManViewCell class]]) {
+            LiDManViewCell *manCell=(LiDManViewCell *)obj;
+            [manCell cellOffset];
+        }else if([obj isKindOfClass:[LiDManCell class]]){
+        
+            LiDManCell *manCell=(LiDManCell *)obj;
+            [manCell cellOffset];
+        }
+    }];
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

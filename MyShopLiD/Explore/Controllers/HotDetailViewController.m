@@ -418,7 +418,7 @@
 
 #pragma mark -收藏按钮事件
 -(void)collectClick:(UIButton *)button{
-
+    
     LoginUserInfo *loginUser=[NSKeyedUnarchiver unarchiveObjectWithFile:[DocPath stringByAppendingPathComponent:@"loginUser"]];
     if (loginUser.user.nickname!=nil) {
         __weak typeof(self) weakSelf=self;
@@ -426,7 +426,7 @@
         
         prarams[@"id"]=self.proId;
         [self.httpManager POST:[NSString stringWithFormat:ICollection,self.proId] parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSLog(@"%@",responseObject);
+            
             NSNumber *number=responseObject[@"likestatus"];
             BOOL likeStatus=NO;
             if ( [number isEqual: @0]) {

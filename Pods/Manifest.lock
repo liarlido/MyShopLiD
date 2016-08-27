@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - CDRTranslucentSideBar (1.0.3)
   - Masonry (1.0.0)
+  - MDCSwipeToChoose (0.2.3)
   - MJRefresh (3.1.0)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - AFNetworking
   - CDRTranslucentSideBar
   - Masonry
+  - MDCSwipeToChoose
   - MJRefresh
   - SDWebImage
   - SVProgressHUD
@@ -36,11 +38,12 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   CDRTranslucentSideBar: b13a1792a8c495ea8f2356846a95bf7119cec7b0
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  MDCSwipeToChoose: 56239d98b4558c66e7c3c9069482befd26092270
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
 
-PODFILE CHECKSUM: 1aa443507921fa455cded5630b66fd5d329f07fb
+PODFILE CHECKSUM: f939d6c8175294239444e559289daaf49ae1d055
 
 COCOAPODS: 1.0.0

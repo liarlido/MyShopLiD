@@ -14,37 +14,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="448" height="184.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IYy-8D-vE1">
-                        <rect key="frame" x="0.0" y="0.0" width="448" height="184.5"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceX-XT-lNj">
-                        <rect key="frame" x="5" y="113.5" width="438" height="18"/>
+                        <rect key="frame" x="205.5" y="83.5" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrK-s7-HFR">
-                        <rect key="frame" x="208.5" y="131.5" width="31" height="14.5"/>
+                        <rect key="frame" x="208" y="106" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="xrK-s7-HFR" firstAttribute="centerX" secondItem="ceX-XT-lNj" secondAttribute="centerX" id="1qv-N5-R4O"/>
                     <constraint firstItem="xrK-s7-HFR" firstAttribute="top" secondItem="ceX-XT-lNj" secondAttribute="bottom" id="97m-wI-luX"/>
-                    <constraint firstAttribute="bottom" secondItem="IYy-8D-vE1" secondAttribute="bottom" id="Dzs-GS-ctz"/>
-                    <constraint firstItem="ceX-XT-lNj" firstAttribute="centerY" secondItem="IYy-8D-vE1" secondAttribute="centerY" constant="30" id="GXx-tt-VLQ"/>
-                    <constraint firstItem="IYy-8D-vE1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IwV-JJ-4kD"/>
+                    <constraint firstItem="ceX-XT-lNj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="FfT-uf-nsI"/>
+                    <constraint firstItem="ceX-XT-lNj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="XW0-nH-wxY"/>
                     <constraint firstItem="xrK-s7-HFR" firstAttribute="centerX" secondItem="ceX-XT-lNj" secondAttribute="centerX" id="Z7O-J6-dsw"/>
-                    <constraint firstItem="IYy-8D-vE1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bXj-1V-Epa"/>
-                    <constraint firstAttribute="trailing" secondItem="IYy-8D-vE1" secondAttribute="trailing" id="d2J-mO-d7Q"/>
                     <constraint firstItem="ceX-XT-lNj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="fkQ-yA-PLp"/>
+                    <constraint firstItem="ceX-XT-lNj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nOW-ja-fEC"/>
+                    <constraint firstItem="xrK-s7-HFR" firstAttribute="top" secondItem="ceX-XT-lNj" secondAttribute="bottom" constant="5" id="uEx-We-Rem"/>
                     <constraint firstAttribute="trailing" secondItem="ceX-XT-lNj" secondAttribute="trailing" constant="5" id="unH-Pd-NoO"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="XW0-nH-wxY"/>
+                        <exclude reference="fkQ-yA-PLp"/>
+                        <exclude reference="unH-Pd-NoO"/>
+                        <exclude reference="97m-wI-luX"/>
+                        <exclude reference="Z7O-J6-dsw"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dateLabel" destination="xrK-s7-HFR" id="ea7-4I-E14"/>
-                <outlet property="preImageView" destination="IYy-8D-vE1" id="Xkn-3f-BEg"/>
                 <outlet property="titleLabel" destination="ceX-XT-lNj" id="UnR-zB-EVd"/>
             </connections>
             <point key="canvasLocation" x="326" y="259.5"/>

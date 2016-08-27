@@ -16,6 +16,6 @@
 
 
 /** 偏移单元格 */
-//- (void)cellOffset;
+- (void)cellOffset;
 
 @end

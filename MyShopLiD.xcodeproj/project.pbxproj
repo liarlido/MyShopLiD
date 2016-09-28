@@ -790,12 +790,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01DED12B1CFBE77600CF60C0 /* Build configuration list for PBXNativeTarget "MyShopLiD" */;
 			buildPhases = (
-				DACB22C0226E6C11373F52A7 /* 📦 Check Pods Manifest.lock */,
+				DACB22C0226E6C11373F52A7 /* [CP] Check Pods Manifest.lock */,
 				01DED0FA1CFBE77600CF60C0 /* Sources */,
 				01DED0FB1CFBE77600CF60C0 /* Frameworks */,
 				01DED0FC1CFBE77600CF60C0 /* Resources */,
-				9DEACFB22AADBD5B53A122A5 /* 📦 Embed Pods Frameworks */,
-				1E44A241271A509B7F9E5E11 /* 📦 Copy Pods Resources */,
+				9DEACFB22AADBD5B53A122A5 /* [CP] Embed Pods Frameworks */,
+				1E44A241271A509B7F9E5E11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -810,12 +810,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01DED12E1CFBE77600CF60C0 /* Build configuration list for PBXNativeTarget "MyShopLiDTests" */;
 			buildPhases = (
-				0DB9AA40362560CAFB7F698A /* 📦 Check Pods Manifest.lock */,
+				0DB9AA40362560CAFB7F698A /* [CP] Check Pods Manifest.lock */,
 				01DED1131CFBE77600CF60C0 /* Sources */,
 				01DED1141CFBE77600CF60C0 /* Frameworks */,
 				01DED1151CFBE77600CF60C0 /* Resources */,
-				B314ACCC18354B2176DE3733 /* 📦 Embed Pods Frameworks */,
-				3ACED3356D812FEE6986648B /* 📦 Copy Pods Resources */,
+				B314ACCC18354B2176DE3733 /* [CP] Embed Pods Frameworks */,
+				3ACED3356D812FEE6986648B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -831,11 +831,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01DED1311CFBE77600CF60C0 /* Build configuration list for PBXNativeTarget "MyShopLiDUITests" */;
 			buildPhases = (
-				13B20D446024A0ABF82C3CBF /* 📦 Check Pods Manifest.lock */,
+				13B20D446024A0ABF82C3CBF /* [CP] Check Pods Manifest.lock */,
 				01DED11E1CFBE77600CF60C0 /* Sources */,
 				01DED11F1CFBE77600CF60C0 /* Frameworks */,
 				01DED1201CFBE77600CF60C0 /* Resources */,
-				C5F783A09E7F0B47FBD5CD76 /* 📦 Copy Pods Resources */,
+				C5F783A09E7F0B47FBD5CD76 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -930,14 +930,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DB9AA40362560CAFB7F698A /* 📦 Check Pods Manifest.lock */ = {
+		0DB9AA40362560CAFB7F698A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -945,14 +945,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		13B20D446024A0ABF82C3CBF /* 📦 Check Pods Manifest.lock */ = {
+		13B20D446024A0ABF82C3CBF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -960,14 +960,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		1E44A241271A509B7F9E5E11 /* 📦 Copy Pods Resources */ = {
+		1E44A241271A509B7F9E5E11 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -975,14 +975,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyShopLiD/Pods-MyShopLiD-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3ACED3356D812FEE6986648B /* 📦 Copy Pods Resources */ = {
+		3ACED3356D812FEE6986648B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -990,14 +990,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyShopLiDTests/Pods-MyShopLiDTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9DEACFB22AADBD5B53A122A5 /* 📦 Embed Pods Frameworks */ = {
+		9DEACFB22AADBD5B53A122A5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1005,14 +1005,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyShopLiD/Pods-MyShopLiD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B314ACCC18354B2176DE3733 /* 📦 Embed Pods Frameworks */ = {
+		B314ACCC18354B2176DE3733 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1020,14 +1020,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyShopLiDTests/Pods-MyShopLiDTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5F783A09E7F0B47FBD5CD76 /* 📦 Copy Pods Resources */ = {
+		C5F783A09E7F0B47FBD5CD76 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1035,14 +1035,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyShopLiDUITests/Pods-MyShopLiDUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DACB22C0226E6C11373F52A7 /* 📦 Check Pods Manifest.lock */ = {
+		DACB22C0226E6C11373F52A7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1258,13 +1258,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6WCWRDPV72;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyShopLiD/Framrworks/UMSocial_4.2.5/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_PREFIX_HEADER = MyShopLiD/PrefixHeader.pch;
 				INFOPLIST_FILE = MyShopLiD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1278,6 +1279,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiaRLido.MyShopLiD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1288,13 +1290,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6WCWRDPV72;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyShopLiD/Framrworks/UMSocial_4.2.5/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 				);
 				GCC_PREFIX_HEADER = MyShopLiD/PrefixHeader.pch;
 				INFOPLIST_FILE = MyShopLiD/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1308,6 +1311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiaRLido.MyShopLiD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
